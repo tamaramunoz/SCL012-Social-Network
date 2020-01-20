@@ -1,56 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bitácora</title>
-  <link rel="stylesheet" href="main.css" />
+
+  <!-- update the version number as needed -->
+
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
-  <div id="root">
+  <div id="message">
 
-    <div id="logo">
-      <img src="images/logoAzul.jpg" />
-    </div>
-    <a href="#root-post">Iniciar sesion</a>
-    <div id="forms">
-      <form action="/form-page" method="post" onsubmit="return validation()">
-        <ul>
-          <li>
-            <label for="mail">Email:</label>
-            <input type="email" id="mail" name="user_mail" />
-          </li>
-          <li>
-            <label for="password-example">Contraseña:</label>
-            <input type="password" id="password-example" name="password-example" required />
-          </li>
-          <li class="button">
-            <button id="registro" type="submit">Registrarse</button>
-          </li>
-        </ul>
-      </form>
-    </div>
-  </div>
+    <!--  <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>  -->
+    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div id="root"></div>
 
-  <div id="root-post" style="height: 400px; background: red; width: 100%;">
 
-  </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    >>>>>>> f8cf671a6753d0043af1e188162fe4531d92d6bc
 
-  <script type="module" src="main.js"></script>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.6.2/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/7.6.2/firebase-analytics.js"></script>
+    <<<<<<< HEAD <script src="/__/firebase/7.6.2/firebase-analytics.js">
+      </script>
 
-  <!-- Previously loaded Firebase SDKs -->
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+      <!-- Previously loaded Firebase SDKs -->
+      <!-- Initialize Firebase -->
+      <script src="/__/firebase/init.js"></script>
 
 </body>
 
