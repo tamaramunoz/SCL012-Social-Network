@@ -10,14 +10,15 @@ modulo.myFunction();
 
 //CLAVES DE ACCESO A CONSOLA FIREBASE
     const firebaseConfig = {
-      apiKey: "AIzaSyB3qZfhmgPz4ptCRmXhD4Wa9WTH4vOlKEg",
-      authDomain: "socialnet-f80a2.firebaseapp.com",
-      databaseURL: "https://socialnet-f80a2.firebaseio.com",
-      projectId: "socialnet-f80a2",
-      storageBucket: "socialnet-f80a2.appspot.com",
-      messagingSenderId: "885408468760",
-      appId: "1:885408468760:web:628562711a6f2cb974986d"
-    };
+        apiKey: "AIzaSyDgD6mNHghURun7IwcQZqbREOFcYXY4z-Q",
+        authDomain: "bitacora-d5fc4.firebaseapp.com",
+        databaseURL: "https://bitacora-d5fc4.firebaseio.com",
+        projectId: "bitacora-d5fc4",
+        storageBucket: "bitacora-d5fc4.appspot.com",
+        messagingSenderId: "336372532933",
+        appId: "1:336372532933:web:5d25b4eb0df322573712ac",
+        measurementId: "G-YBXSZ9NSY2"
+      };
 //INICIALIZACIÓN DE FIREBASE
   firebase.initializeApp(firebaseConfig);
 
