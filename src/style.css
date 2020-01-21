@@ -1,12 +1,24 @@
 body{
-    background-color: #245c1d;
+    background-color: #dbd472;
+}
+
+img {
+    margin: 0 auto;
+    width: 12%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    list-style: none;
 }
 
 #root {
     height: 100%; 
     display: flex;
     flex-flow: column;
-   }
+}
 
 .icon {
     max-width: 25px;
@@ -14,7 +26,6 @@ body{
     padding: 5px;
     display: inline-block;
 }
-
 
 .login {
     padding: 0 10px;
@@ -25,16 +36,7 @@ body{
     width: 250px;
     cursor: pointer;
     margin: 10px auto;
-    
-    
 }
-
-
-#newAccount {
-    cursor: pointer;
-    text-decoration-line: underline;
-}
-
 
 .login p {
     margin: 1em;
@@ -46,8 +48,6 @@ body{
 .login.Facebook p{
     margin: 1em 0.4em;
 }
-
-
 
 .logo{
     max-width: 280px;
@@ -74,7 +74,7 @@ body{
     margin: auto;
 }
 
-#createAccount {
+.registro{
     display: block;
     margin: auto;
     margin-top: 10px;
