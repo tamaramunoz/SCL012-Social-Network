@@ -119,11 +119,3 @@ img {
     outline: none;
   
 }
-
-.fontRoot {  /*agregado y cambiado por ana*/
-    color: rgb(250, 251, 252);
-    text-align: center;
-    /*margin-left: 13px;*/
-    margin-top: 5px; 
-    cursor: pointer; /*agregado por ana*/
-} 

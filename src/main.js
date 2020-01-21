@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
     // User is signed in.
     const displayName = user.displayName;
