@@ -3,10 +3,6 @@ import {
 } from '../lib/google-auth.js';
 
 import {
-  facebookLogin
-} from '../lib/facebook-auth.js';
-
-import {
   emailLogin 
 } from '../lib/index.js';
 
@@ -52,10 +48,6 @@ const buildListenerForm = () => {
     // BOTÓN LOGIN CON GOOGLE
     document.getElementById("loginGoogle").addEventListener("click", () => {
       googleLogin();
-    });
-    // BOTÓN LOGIN CON FACEBOOK
-    document.getElementById("loginFacebook").addEventListener("click", () => {
-      facebookLogin()
     });
 
     // BOTON CREACIÓN DE CUENTA
