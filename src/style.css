@@ -1,18 +1,4 @@
-/*
-body { background: rgb(78, 131, 91); color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-#message { background: rgba(74, 173, 60, 0.788); max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-#message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-#message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-#message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-#message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-#message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-#load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-@media (max-width: 600px) {
-  body, #message { margin-top: 0; background: rgb(28, 151, 39); box-shadow: none; }
-  body { border-top: 16px solid #ffa100; }
-}
-
-*/
+s
 
 body{
     background-color: #245c1d;
@@ -136,10 +122,9 @@ body{
   
 }
 
-.fontRoot {  /*agregado y cambiado por ana*/
+.fontRoot {  
     color: rgb(250, 251, 252);
     text-align: center;
-    /*margin-left: 13px;*/
     margin-top: 5px; 
-    cursor: pointer; /*agregado por ana*/
+    cursor: pointer; 
 } 
