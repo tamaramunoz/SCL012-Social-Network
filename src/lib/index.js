@@ -34,17 +34,17 @@ export const logout = () => {
 
 
 
-// agregando posts
-db.collection("posts").add({
-  name: "Tami",
-  place: "Cajon del Maipo",
-  description: "Lugar para acampar"
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+// // agregando posts
+// db.collection("posts").add({
+//   name: "Tami",
+//   place: "Cajon del Maipo",
+//   description: "Lugar para acampar"
+// })
+// .then(function(docRef) {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch(function(error) {
+//   console.error("Error adding document: ", error);
+// });
 
 
