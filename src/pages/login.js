@@ -74,7 +74,7 @@ const buildListenerForm = () => {
     });
 
 
-    // // BOTON LOGOUT
+    // // BOTON LOGOUT.
     // document.getElementById("btnLogOut").addEventListener("click", () => {
     //   firebase.auth().signOut();
     // });
