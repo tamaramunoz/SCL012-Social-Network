@@ -8,7 +8,7 @@ export const emailLogin=(email, password)=> {
 // CREAR CUENTA MAIL Y PWD
 export const createAccount=(email, password)=> {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-    window.socialNet.verification();
+    // window.socialNet.verification();
   }).catch(function(error) {
       const errorCode = error.code;
       const errorMessage = error.message;

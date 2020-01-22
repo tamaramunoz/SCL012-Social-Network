@@ -3,11 +3,11 @@ import {
 } from '../lib/google-auth.js';
 
 import {
-  facebookLogin
-} from '../lib/facebook-auth.js';
+  emailLogin
+} from '../lib/index.js';
 
 import {
-  emailLogin 
+  createAccount
 } from '../lib/index.js';
 
 //GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
@@ -29,7 +29,6 @@ export const goLoginPage = () => {
               <button class= "login" id="registro" type="button">Registrarse</button>
               <button class= "login" id="btnLogin" type="submit">Iniciar sesión</button>
               <span id="loginGoogle" class="login"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Inicia Sesión con Google</p></span>
-              <span id="loginFacebook" class="login Facebook"><img src="" class="icon" alt=""><p>Inicia Sesión con Facebook</p></span>
             </li>
           </ul>
         </form>
@@ -53,30 +52,32 @@ const buildListenerForm = () => {
     document.getElementById("loginGoogle").addEventListener("click", () => {
       googleLogin();
     });
-    // BOTÓN LOGIN CON FACEBOOK
-    document.getElementById("loginFacebook").addEventListener("click", () => {
-      facebookLogin()
-    });
 
     // BOTON CREACIÓN DE CUENTA
     document.getElementById("registro").addEventListener("click", () => {
-      document.getElementById("root").innerHTML = '';
+      document.getElementById("root").innerHTML = `
+        <div class="logo" id="logo"><img src="./img/img.jpg"></div>
+        <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
+        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico..">
+        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña..">
+        <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
+        <a class="fontRoot" id="volver">Volver</a></div>`;
 
-      // BOTON QUE VUELVE AL LOGIN
-      document.getElementById("volver").addEventListener("click", () => {
-        document.getElementById("root").innerHTML = '';
-        loginPage();
-      });
 
       // BOTON QUE CREA CUENTA
       document.getElementById("btnCreate").addEventListener("click", () => {
         const email = document.getElementById("newTextMail").value;
         const password = document.getElementById("newTextPassword").value;
-        modulo.createAccount(email, password);
-
+        createAccount(email, password);
       });
+
     });
 
+
+    // // BOTON LOGOUT
+    // document.getElementById("btnLogOut").addEventListener("click", () => {
+    //   firebase.auth().signOut();
+    // });
   } catch (e) {
     console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
