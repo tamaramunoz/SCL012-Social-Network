@@ -1,4 +1,3 @@
-
 // LOGIN CON EMAIL Y PWD
 export const emailLogin=(email, password)=> {
   const auth = firebase.auth();
@@ -9,7 +8,7 @@ export const emailLogin=(email, password)=> {
 // CREAR CUENTA MAIL Y PWD
 export const createAccount=(email, password)=> {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-    window.socialNet.verification();
+    // window.socialNet.verification();
   }).catch(function(error) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -32,4 +31,20 @@ export const logout = () => {
       console.log(error)
     });
 }
+
+
+
+// // agregando posts
+// db.collection("posts").add({
+//   name: "Tami",
+//   place: "Cajon del Maipo",
+//   description: "Lugar para acampar"
+// })
+// .then(function(docRef) {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch(function(error) {
+//   console.error("Error adding document: ", error);
+// });
+
 
