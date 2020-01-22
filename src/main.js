@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!user) {
     goLoginPage();
   } else {
-    document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
+  document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
   }
 });
 
