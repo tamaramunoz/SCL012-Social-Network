@@ -1,5 +1,30 @@
-// Este es el punto de entrada de tu aplicacion
+import {
+  goLoginPage
+} from './pages/login.js'
+import './firebase-init.js';
 
-import { myFunction } from './lib/index.js';
+document.addEventListener('DOMContentLoaded', () => {
+  const user = firebase.auth().currentUser;
+  if (!user) {
+    goLoginPage();
+  } else {
+    document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
+  }
+});
 
-myFunction();
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    const displayName = user.displayName;
+    const email = user.email;
+    const emailVerified = user.emailVerified;
+    const photoURL = user.photoURL;
+    const isAnonymous = user.isAnonymous;
+    const uid = user.uid;
+    const providerData = user.providerData;
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
