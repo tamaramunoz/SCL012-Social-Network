@@ -56,25 +56,28 @@ const buildListenerForm = () => {
     // BOTON CREACIÓN DE CUENTA
     document.getElementById("registro").addEventListener("click", () => {
       document.getElementById("root").innerHTML = `
-  <div class="logo" id="logo"><img src="./img/img.jpg"></div><div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p><input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico.."><input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.."><button id="btnCreate" class="btnLogin">Crear Cuenta</button><a class="fontRoot" id="volver">Volver</a></div>`;
-    });
-    // BOTON QUE VUELVE AL LOGIN
-    document.getElementById("volver").addEventListener("click", () => {
-      document.getElementById("root").innerHTML = '';
-      goLoginPage();
+        <div class="logo" id="logo"><img src="./img/img.jpg"></div>
+        <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
+        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico..">
+        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña..">
+        <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
+        <a class="fontRoot" id="volver">Volver</a></div>`;
+
+
+      // BOTON QUE CREA CUENTA
+      document.getElementById("btnCreate").addEventListener("click", () => {
+        const email = document.getElementById("newTextMail").value;
+        const password = document.getElementById("newTextPassword").value;
+        createAccount(email, password);
+      });
+
     });
 
-    // BOTON QUE CREA CUENTA
-    document.getElementById("btnCreate").addEventListener("click", () => {
-      const email = document.getElementById("newTextMail").value;
-      const password = document.getElementById("newTextPassword").value;
-      createAccount(email, password);
-    });
 
-    // BOTON LOGOUT
-    document.getElementById("btnLogOut").addEventListener("click", () => {
-      firebase.auth().signOut();
-    });
+    // // BOTON LOGOUT
+    // document.getElementById("btnLogOut").addEventListener("click", () => {
+    //   firebase.auth().signOut();
+    // });
   } catch (e) {
     console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';

@@ -11,3 +11,7 @@ const firebaseConfig = {
 };
 //INICIALIZACIÓN DE FIREBASE
 firebase.initializeApp(firebaseConfig);
+
+// inicializando cloud firestore
+// let db = firebase.firestore();
+  
