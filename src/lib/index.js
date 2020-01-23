@@ -2,8 +2,8 @@
 export const emailLogin=(email, password)=> {
   event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       if (errorCode === 'auth/wrong-password') {
         alert('Contraseña Incorrecta');
       } else {

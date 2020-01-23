@@ -47,7 +47,7 @@ const buildListenerForm = () => {
       const email = document.getElementById("txtMail").value;
       const password = document.getElementById("txtPassword").value;
       console.log(email);
-      console.log(password)
+      console.log(password);
       emailLogin(email, password);
     });
     // BOTÓN LOGIN CON GOOGLE
