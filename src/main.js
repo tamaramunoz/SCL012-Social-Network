@@ -1,4 +1,5 @@
 import { goLoginPage } from './pages/login.js'
+import { mainFeed } from './pages/login.js'
 import './firebase-init.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +16,8 @@ const stateObserved = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+      console.log('usuario activo');
+      mainFeed();
       const displayName = user.displayName;
       const email = user.email;
       const emailVerified = user.emailVerified;

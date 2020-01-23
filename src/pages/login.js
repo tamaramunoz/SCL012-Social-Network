@@ -85,3 +85,10 @@ const buildListenerForm = () => {
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
 }
+
+
+export const mainFeed = () => {
+  let contenido = document.getElementById('root');
+  contenido.innerHTML = "solo lo ve usuario con inicio de sesión"
+}
+
