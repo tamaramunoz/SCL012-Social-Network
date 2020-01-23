@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-// aqui exportaras las funciones que necesites
-// LOGIN CON GOOGLE
-export const googleLogin=()=> {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(provider);
-  }
-  
-=======
+
 // LOGIN CON GOOGLE
 
 export const googleLogin = () => {
@@ -31,4 +23,4 @@ export const googleLogin = () => {
     return !!firebase.auth().currentUser;
   }
 } 
->>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3
+
