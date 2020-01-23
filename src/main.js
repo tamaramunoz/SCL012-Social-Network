@@ -8,11 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!user) {
     goLoginPage();
   } else {
+<<<<<<< HEAD
+    document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
+  }
+});
+
+=======
   document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
   }
 });
 
 //
+>>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3
 firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
     // User is signed in.
@@ -28,4 +35,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed out.
     // ...
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3

@@ -27,7 +27,7 @@ export const createAccount=(email, password)=> {
       } if (errorCode === "auth/password débil"){
         alert("Contraseña tiene que tener más de 8 caracteres y una mayúscula")
       }
-      console.log(`${errorCode} ${errorMessage}`)
+      alert(`${errorCode}`)
     });
 }
 
