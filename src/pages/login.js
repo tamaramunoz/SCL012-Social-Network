@@ -46,6 +46,8 @@ const buildListenerForm = () => {
     document.getElementById("form-login").addEventListener("submit", () => {
       const email = document.getElementById("txtMail").value;
       const password = document.getElementById("txtPassword").value;
+      console.log(email);
+      console.log(password)
       emailLogin(email, password);
     });
     // BOTÓN LOGIN CON GOOGLE

@@ -1,14 +1,22 @@
 // LOGIN CON EMAIL Y PWD
 export const emailLogin=(email, password)=> {
-  const auth = firebase.auth();
-  const promise = auth.signInWithEmailAndPassword(email, password)
-  promise.catch(e=> console.log(e.message));
-}
+  event.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Contraseña Incorrecta');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+    });
+  }
+
 
 // CREAR CUENTA MAIL Y PWD
 export const createAccount=(email, password)=> {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-    // window.socialNet.verification();
   }).catch(function(error) {
       const errorCode = error.code;
       const errorMessage = error.message;
