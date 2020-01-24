@@ -8,26 +8,24 @@ import {
 } from '../lib/index.js';
 
 
-
 // GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
-
   document.getElementById('root').innerHTML =
-    `<div id="form-login" class= "form-login">
+    `<div id="form-login" class="form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
           <ul class= "list">
-            <li>
+            <li class="text-box">
               <label for="mail"></label>
-              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder = "Correo electrónico" />
+              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
             </li>
-            <li>
+            <li class="text-box">
               <label for="password-example"></label> 
-              <input class="inputLogin" type="password" id="txtPassword" name="password-example" Placeholder = "Contraseña" required />
+              <input class="inputLogin" type="password" id="txtPassword" name="password-example" Placeholder="Contraseña" required />
             </li>
             <li class="button">
-              <button class= "login" id="registro" type="button">Registrarse</button>
-              <button class= "login" id="btnLogin" type="submit">Iniciar sesión</button>
-              <span id="loginGoogle" class="login"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Inicia Sesión</p></span>
+              <button class= "login" id="btnLogin" type="submit">Iniciar Sesión</button>
+              <button class= "register" id="registro" type="button">Registrate</button>
+              <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Registrate con Google</p></span>
             </li>
           </ul>
         </form>
@@ -39,7 +37,6 @@ export const goLoginPage = () => {
  * Funcion inicia el boton de login cuando este exista
  */
 const buildListenerForm = () => {
-
   try {
     // BOTON PARA LOGUEAR CON EMAIL Y PASSWORD
     document.getElementById('form-login').addEventListener('submit', () => {
@@ -55,10 +52,10 @@ const buildListenerForm = () => {
     // BOTON CREACIÓN DE CUENTA
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
-        <div class="logo" id="logo"><img src="./img/img.jpg"></div>
+        <div class="logo" id="logo"></div>
         <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
-        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico.">
-        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
+        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico">
+        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña">
         <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
         <a class="fontRoot" id="volver">Volver</a></div>`;
 
@@ -71,7 +68,7 @@ const buildListenerForm = () => {
       });
 
       // Boton volver al login
-      document.getElementById('volver').addEventListener('click',() =>{
+      document.getElementById('volver').addEventListener('click', () => {
         goLoginPage();
       });
     });
