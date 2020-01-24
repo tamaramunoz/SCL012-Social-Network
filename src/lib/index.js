@@ -2,8 +2,8 @@
 export const emailLogin=(email, password)=> {
   event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       if (errorCode === 'auth/wrong-password') {
         alert('Contraseña Incorrecta');
       } else {
@@ -39,20 +39,3 @@ export const logout = () => {
       console.log(error)
     });
 }
-
-
-
-// // agregando posts
-// db.collection("posts").add({
-//   name: "Tami",
-//   place: "Cajon del Maipo",
-//   description: "Lugar para acampar"
-// })
-// .then(function(docRef) {
-//   console.log("Document written with ID: ", docRef.id);
-// })
-// .catch(function(error) {
-//   console.error("Error adding document: ", error);
-// });
-
-
