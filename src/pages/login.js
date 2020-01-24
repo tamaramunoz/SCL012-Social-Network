@@ -28,7 +28,7 @@ export const goLoginPage = () => {
             <li class="button">
               <button class= "login" id="registro" type="button">Registrarse</button>
               <button class= "login" id="btnLogin" type="submit">Iniciar sesión</button>
-              <span id="loginGoogle" class="login"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Inicia Sesión con Google</p></span>
+              <span id="loginGoogle" class="login"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Inicia Sesión</p></span>
             </li>
           </ul>
         </form>
@@ -36,7 +36,7 @@ export const goLoginPage = () => {
   buildListenerForm();
 }
 
-/**
+/*
  * Funcion inicia el boton de login cuando este exista
  */
 const buildListenerForm = () => {
@@ -52,7 +52,11 @@ const buildListenerForm = () => {
     });
     // BOTÓN LOGIN CON GOOGLE
     document.getElementById("loginGoogle").addEventListener("click", () => {
-      googleLogin();
+      document.getElementById("root").innerHTML = 
+    `<div class= "inicio-perfil" id= "inicio">
+     <p>Bienvenido</div>
+     <button id= "btnLogOut" class= "btnLogOut">cerrar sesión</button>`
+     googleLogin();
     });
 
     // BOTON CREACIÓN DE CUENTA
@@ -75,12 +79,18 @@ const buildListenerForm = () => {
 
     });
 
+    // / BOTON LOGOUT.
+   document.getElementById("btnLogOut").addEventListener("click", () => {
+   firebase.auth().signOut()
+   .then(function(){
+     console.log("salir");
+   })
+   .catch(function(error){
+     console.log("salir")
+   })
+     });
 
-    // // BOTON LOGOUT.
-    // document.getElementById("btnLogOut").addEventListener("click", () => {
-    //   firebase.auth().signOut();
-    // });
-  } catch (e) {
+  } catch(e) {
     console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
