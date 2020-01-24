@@ -1,12 +1,12 @@
 export const goHome = (displayName) => {
     document.getElementById("root").innerHTML =
         `<div class= "inicio-home" id= "inicio"></div>
-     <div class="topnav">
-     <a id = "home" href="#">Home</a>
-     <a id = "perfil"href="#">Perfil</a>
-     <a id = "btnLogOut" href="#">Cerrar sesión</a>
-     <a href="#" style="float:right">Configuración</a>
-     </div>`;
+            <div class="topnav">
+                <a id = "home" href="#">Home</a>
+                <a id = "perfil"href="#">Perfil</a>
+                <a id = "btnLogOut" href="#">Cerrar sesión</a>
+                <a href="#" style="float:right">Configuración</a>
+            </div>`;
     // / BOTON LOGOUT.
     document.getElementById("btnLogOut").addEventListener("click", () => {
         firebase.auth().signOut()
@@ -22,7 +22,7 @@ export const goHome = (displayName) => {
 }
 
 
-// // agregando posts
+// #Agregando Posts
 // db.collection("posts").add({
 //   name: "Tami",
 //   place: "Cajon del Maipo",

@@ -10,7 +10,7 @@ import {
   createAccount
 } from '../lib/index.js';
 
-//GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
+// GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
 
   document.getElementById("root").innerHTML =
@@ -47,7 +47,7 @@ const buildListenerForm = () => {
       const email = document.getElementById("txtMail").value;
       const password = document.getElementById("txtPassword").value;
       console.log(email);
-      console.log(password)
+      console.log(password);
       emailLogin(email, password);
     });
     // BOTÓN LOGIN CON GOOGLE
@@ -81,3 +81,10 @@ const buildListenerForm = () => {
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
 }
+
+
+export const mainFeed = () => {
+  let contenido = document.getElementById('root');
+  contenido.innerHTML = "solo lo ve usuario con inicio de sesión"
+}
+
