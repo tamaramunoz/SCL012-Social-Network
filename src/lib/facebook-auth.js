@@ -1,7 +1,7 @@
 // LOGIN CON FACEBOOK
 
-export const facebookLogin=()=> {
-    const provider = new firebase.auth.FacebookAuthProvider();
+export const googleLogin=()=> {
+    const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
   }
   

@@ -1,9 +1,5 @@
 body{
-<<<<<<< HEAD
-    background-color: #dbd472;
-=======
     background-color: #e4e4cb;
->>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3
 }
 
 img {
@@ -14,11 +10,6 @@ img {
     justify-content: center;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3
 .list {
     list-style: none;
 }
@@ -126,16 +117,4 @@ img {
 
 .btnLogin:focus{
     outline: none;
-<<<<<<< HEAD
-  
 }
-
-.fontRoot {  
-    color: rgb(250, 251, 252);
-    text-align: center;
-    margin-top: 5px; 
-    cursor: pointer; 
-} 
-=======
-}
->>>>>>> ead1df85d5e868175ab13e696ca9714e561a84f3
