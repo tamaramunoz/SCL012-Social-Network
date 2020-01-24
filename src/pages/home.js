@@ -1,4 +1,4 @@
-export const goHome = (displayName) => {
+export const goHome = () => {
     document.getElementById("root").innerHTML =
         `<div class= "inicio-home" id= "inicio"></div>
             <div class="topnav">
