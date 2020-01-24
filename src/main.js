@@ -1,6 +1,7 @@
 import { goLoginPage } from './pages/login.js'
-import { mainFeed } from './pages/login.js'
+import { goHome } from './pages/home.js';
 import './firebase-init.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const user = firebase.auth().currentUser;
@@ -11,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 // #Observador de autenticación
 const stateObserved = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
       console.log('usuario activo');
-      mainFeed();
       const displayName = user.displayName;
       const email = user.email;
       const emailVerified = user.emailVerified;
@@ -25,11 +26,10 @@ const stateObserved = () => {
       const isAnonymous = user.isAnonymous;
       const uid = user.uid;
       const providerData = user.providerData;
-      // ...
+      goHome();
     } else {
-      // User is signed out.
+      goLoginPage();
       console.log('no existe usuario activo');
-      // ...
     }
   });
 }
