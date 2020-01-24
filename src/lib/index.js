@@ -1,6 +1,6 @@
 // LOGIN CON EMAIL Y PWD
-export const emailLogin=(email, password)=> {
-  event.preventDefault();
+export const emailLogin = (email, password) => {
+  Event.preventDefault();
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
       const errorCode = error.code;
       const errorMessage = error.message;

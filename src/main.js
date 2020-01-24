@@ -2,17 +2,6 @@ import { goLoginPage } from './pages/login.js'
 import { goHome } from './pages/home.js';
 import './firebase-init.js';
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const user = firebase.auth().currentUser;
-  if (!user) {
-    goLoginPage();
-  } else {
-    document.getElementById("root").innerHTML = "<div>Bienvenido Usuario</div>";
-  }
-});
-
-
 // #Observador de autenticación
 const stateObserved = () => {
   firebase.auth().onAuthStateChanged(function (user) {
