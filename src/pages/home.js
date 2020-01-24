@@ -1,25 +1,23 @@
-export const goHome = (displayName) => {
-    document.getElementById("root").innerHTML =
-        `<div class= "inicio-home" id= "inicio"></div>
+export const goHome = () => {
+  document.getElementById('root').innerHTML = `<div class= "inicio-home" id= "inicio"></div>
             <div class="topnav">
                 <a id = "home" href="#">Home</a>
                 <a id = "perfil"href="#">Perfil</a>
                 <a id = "btnLogOut" href="#">Cerrar sesión</a>
                 <a href="#" style="float:right">Configuración</a>
             </div>`;
-    // / BOTON LOGOUT.
-    document.getElementById("btnLogOut").addEventListener("click", () => {
-        firebase.auth().signOut()
-            .then(function () {
-                goLoginPage();
-                console.log("salir");
-            })
-            .catch(function (error) {
-                console.log("error saliendo")
-            })
-    });
-
-}
+  // / BOTON LOGOUT.
+  document.getElementById('btnLogOut').addEventListener('click', () => {
+    firebase.auth().signOut()
+      .then(() => {
+        goLoginPage();
+        console.log('salir');
+      })
+      .catch((error) => {
+        console.log('error saliendo');
+      });
+  });
+};
 
 
 // #Agregando Posts
