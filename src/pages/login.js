@@ -10,7 +10,7 @@ import {
   createAccount
 } from '../lib/index.js';
 
-//GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
+// GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
 
   document.getElementById("root").innerHTML =
