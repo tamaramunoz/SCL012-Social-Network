@@ -2,6 +2,7 @@ import {
   goLoginPage
 } from './pages/login.js'
 import './firebase-init.js';
+import { goHome } from './pages/home.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const user = firebase.auth().currentUser;
@@ -22,10 +23,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     const isAnonymous = user.isAnonymous;
     const uid = user.uid;
     const providerData = user.providerData;
-    // ...
+    goHome();
   } else {
-    // User is signed out.
-    // ...
+    goLoginPage();
   }
 });
 

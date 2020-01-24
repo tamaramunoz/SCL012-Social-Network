@@ -52,11 +52,7 @@ const buildListenerForm = () => {
     });
     // BOTÓN LOGIN CON GOOGLE
     document.getElementById("loginGoogle").addEventListener("click", () => {
-      document.getElementById("root").innerHTML = 
-    `<div class= "inicio-perfil" id= "inicio">
-     <p>Bienvenido</div>
-     <button id= "btnLogOut" class= "btnLogOut">cerrar sesión</button>`
-     googleLogin();
+      googleLogin();
     });
 
     // BOTON CREACIÓN DE CUENTA
@@ -79,18 +75,8 @@ const buildListenerForm = () => {
 
     });
 
-    // / BOTON LOGOUT.
-   document.getElementById("btnLogOut").addEventListener("click", () => {
-   firebase.auth().signOut()
-   .then(function(){
-     console.log("salir");
-   })
-   .catch(function(error){
-     console.log("salir")
-   })
-     });
 
-  } catch(e) {
+  } catch (e) {
     console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
