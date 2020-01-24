@@ -7,7 +7,7 @@ export const goHome = (displayName) => {
                 <a id = "btnLogOut" href="#">Cerrar sesión</a>
                 <a href="#" style="float:right">Configuración</a>
             </div>`;
-    // / BOTON LOGOUT.
+    // BOTON LOGOUT.
     document.getElementById("btnLogOut").addEventListener("click", () => {
         firebase.auth().signOut()
             .then(function () {
