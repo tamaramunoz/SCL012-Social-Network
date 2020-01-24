@@ -14,7 +14,7 @@ import {
 export const goLoginPage = () => {
 
   document.getElementById("root").innerHTML =
-    `<div id="form-login">
+    `<div id="form-login" class= "form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
           <ul class= "list">
             <li>
@@ -61,7 +61,7 @@ const buildListenerForm = () => {
         <div class="logo" id="logo"><img src="./img/img.jpg"></div>
         <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
         <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico..">
-        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña..">
+        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
         <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
         <a class="fontRoot" id="volver">Volver</a></div>`;
 

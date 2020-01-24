@@ -4,15 +4,6 @@ import {
 import './firebase-init.js';
 import { goHome } from './pages/home.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const user = firebase.auth().currentUser;
-  if (!user) {
-    goLoginPage();
-  } else {
-  document.getElementById("root").innerHTML =  "<div>Bienvenido Usuario</div>";
-  }
-});
-
 firebase.auth().onAuthStateChanged(function(user) { 
   if (user) {
     // User is signed in.
@@ -28,4 +19,3 @@ firebase.auth().onAuthStateChanged(function(user) {
     goLoginPage();
   }
 });
-
