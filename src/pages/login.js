@@ -60,7 +60,7 @@ const buildListenerForm = () => {
       document.getElementById("root").innerHTML = `
         <div class="logo" id="logo"><img src="./img/img.jpg"></div>
         <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
-        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico..">
+        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico.">
         <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
         <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
         <a class="fontRoot" id="volver">Volver</a></div>`;
@@ -73,6 +73,10 @@ const buildListenerForm = () => {
         createAccount(email, password);
       });
 
+      // Boton volver al login
+    document.getElementById("volver").addEventListener("click",() =>{
+      goLoginPage();
+      })
     });
 
 
