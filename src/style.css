@@ -47,26 +47,21 @@ img {
 
 .logo{
     max-width: 280px;
-    
     display: block;
     background-color:  #245c1d;
     margin:auto;
-
-
-    }
+}
 
 .logo img{
  width: 100%;
  height: 100%;
- }
+}
    
-
 .form-login {
     margin: auto;
     width: 30%;
     padding: 5px;
-    background-color: hsla(9, 4%, 33%, 0.2);
-    
+    background-color: hsla(9, 4%, 33%, 0.2); 
 }
 
 .registro{
@@ -83,7 +78,6 @@ img {
     border-radius: 10px;
     font-family: 'Roboto', sans-serif !important;
     border: 0.5px solid rgb(11, 116, 20);
-
 }
 
 .inputLogin:focus {
@@ -125,7 +119,7 @@ img {
 .topnav {
     overflow: hidden;
     background-color: #333;
-  }
+}
 
   /* Style the topnav links */
 .topnav a {
@@ -135,13 +129,13 @@ img {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
   
   /* Change color on hover */
   .topnav a:hover {
     background-color: #ddd;
     color: black;
-  }
+}
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
@@ -149,7 +143,7 @@ img {
       width: 100%;
       padding: 0;
     }
-  }
+}
   
   /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 400px) {
@@ -157,4 +151,4 @@ img {
       float: none;
       width: 100%;
     }
-  }
+}
