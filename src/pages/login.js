@@ -6,29 +6,32 @@ import {
   emailLogin,
   createAccount,
 } from '../lib/index.js';
+
 //  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
   document.getElementById('root').innerHTML = `<div id="form-login" class="form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
-          <ul class="list">
-            <li>
+          <ul class="list"
+            <li class="text-box">
+
               <label for="mail"></label>
-              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder = "Correo electrónico" />
+              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
             </li>
-            <li>
+            <li class="text-box">
               <label for="password-example"></label> 
-              <input class="inputLogin" type="password" id="txtPassword" name="password-example" Placeholder = "Contraseña" required />
+              <input class="inputLogin" type="password" id="txtPassword" name="password-example" Placeholder="Contraseña" required />
             </li>
             <li class="button">
-              <button class= "login" id="registro" type="button">Registrarse</button>
-              <button class= "login" id="btnLogin" type="submit">Iniciar sesión</button>
-              <span id="loginGoogle" class="login"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Inicia Sesión</p></span>
+              <button class="login" id="btnLogin" type="submit">Iniciar Sesión</button>
+              <button class="register" id="registro" type="button">Registrate</button>
+              <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo2.png" class="icon" alt=""><p>Registrate con Google</p></span>
             </li>
           </ul>
         </form>
       </div>`;
   buildListenerForm();
 };
+
 //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
 const buildListenerForm = () => {
   try {
@@ -50,6 +53,7 @@ const buildListenerForm = () => {
         <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
         <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
         <a class="fontRoot" id="loginBack">Volver</a></div>`;
+      
       // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
       document.getElementById('btnCreate').addEventListener('click', () => {
         const email = document.getElementById('newTextMail').value;

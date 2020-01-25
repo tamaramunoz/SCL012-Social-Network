@@ -1,6 +1,6 @@
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
-  Event.preventDefault();
+  event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -12,7 +12,6 @@ export const emailLogin = (email, password) => {
     console.log(error);
   });
 };
-
 
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
