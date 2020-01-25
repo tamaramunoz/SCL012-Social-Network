@@ -1,8 +1,9 @@
 // LOGIN CON GOOGLE
 
 export const googleLogin = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
+  let provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider);
+
 }
 
 export const getProfilePicUrl = () => {
