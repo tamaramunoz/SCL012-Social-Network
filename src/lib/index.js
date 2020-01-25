@@ -13,7 +13,6 @@ export const emailLogin = (email, password) => {
   });
 };
 
-
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
