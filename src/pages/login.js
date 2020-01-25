@@ -23,9 +23,9 @@ export const goLoginPage = () => {
               <input class="inputLogin" type="password" id="txtPassword" name="password-example" Placeholder="Contraseña" required />
             </li>
             <li class="button">
-              <button class= "login" id="btnLogin" type="submit">Iniciar Sesión</button>
-              <button class= "register" id="registro" type="button">Registrate</button>
-              <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo.jpg" class="icon" alt=""><p>Registrate con Google</p></span>
+              <button class="login" id="btnLogin" type="submit">Iniciar Sesión</button>
+              <button class="register" id="registro" type="button">Registrate</button>
+              <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo2.png" class="icon" alt=""><p>Registrate con Google</p></span>
             </li>
           </ul>
         </form>
@@ -52,12 +52,13 @@ const buildListenerForm = () => {
     // BOTON CREACIÓN DE CUENTA
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
-        <div class="logo" id="logo"></div>
-        <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu cuenta</p>
-        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico">
-        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña">
-        <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
-        <a class="fontRoot" id="volver">Volver</a></div>`;
+        <div id="createAccount" class="registerBox">
+          <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
+          <input type="text" id="newTextMail" class="inputRegister" placeholder="Correo electrónico"><br>
+          <input type="password" id="newTextPassword" class="inputRegister" placeholder="Contraseña">
+          <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
+          <a class="comeback" id="volver">Volver</a>
+        </div>`;
 
 
       // BOTON QUE CREA CUENTA
