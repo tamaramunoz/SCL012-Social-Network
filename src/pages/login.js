@@ -7,14 +7,13 @@ import {
   createAccount,
 } from '../lib/index.js';
 
-
-// GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
+//  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
-  document.getElementById('root').innerHTML =
-    `<div id="form-login" class="form-login">
+  document.getElementById('root').innerHTML = `<div id="form-login" class="form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
-          <ul class= "list">
+          <ul class="list"
             <li class="text-box">
+
               <label for="mail"></label>
               <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
             </li>
@@ -33,9 +32,7 @@ export const goLoginPage = () => {
   buildListenerForm();
 };
 
-/*
- * Funcion inicia el boton de login cuando este exista
- */
+//  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
 const buildListenerForm = () => {
   try {
     // BOTON PARA LOGUEAR CON EMAIL Y PASSWORD
@@ -48,35 +45,29 @@ const buildListenerForm = () => {
     document.getElementById('loginGoogle').addEventListener('click', () => {
       googleLogin();
     });
-
-    // BOTON CREACIÓN DE CUENTA
+    // BOTON PARA IR A PÁGINA DE REGISTRO DE NUEVO USUARIO
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
-        <div id="createAccount" class="registerBox">
-          <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
-          <input type="text" id="newTextMail" class="inputRegister" placeholder="Correo electrónico"><br>
-          <input type="password" id="newTextPassword" class="inputRegister" placeholder="Contraseña">
-          <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
-          <a class="comeback" id="volver">Volver</a>
-        </div>`;
-
-
-      // BOTON QUE CREA CUENTA
+        <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu crear tu cuenta</p>
+        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico.">
+        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
+        <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
+        <a class="fontRoot" id="loginBack">Volver</a></div>`;
+      
+      // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
       document.getElementById('btnCreate').addEventListener('click', () => {
         const email = document.getElementById('newTextMail').value;
         const password = document.getElementById('newTextPassword').value;
         createAccount(email, password);
       });
 
-      // Boton volver al login
-      document.getElementById('volver').addEventListener('click', () => {
+      //  BOTÓN REGRESO AL LOGIN
+      document.getElementById('loginBack').addEventListener('click', () => {
         goLoginPage();
       });
     });
-
-
   } catch (e) {
-    console.error(e);
+    //  console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
 };

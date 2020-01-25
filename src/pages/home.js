@@ -18,22 +18,17 @@ export const goHome = () => {
         console.log("error saliendo");
         });
     });
-    //Boton perfil
-    document.getElementById("perfil").addEventListener("click", () => {
-   document.getElementById("root").innerHTML =  perfilEdit();
-  });
 };
 
-
-// #Agregando Posts
-// db.collection("posts").add({
+//   #Agregando Posts
+//   db.collection("posts").add({
 //   name: "Tami",
 //   place: "Cajon del Maipo",
 //   description: "Lugar para acampar"
-// })
-// .then(function(docRef) {
+//   })
+//   .then(function(docRef) {
 //   console.log("Document written with ID: ", docRef.id);
-// })
-// .catch(function(error) {
+//   })
+//   .catch(function(error) {
 //   console.error("Error adding document: ", error);
-// });
+//   });
