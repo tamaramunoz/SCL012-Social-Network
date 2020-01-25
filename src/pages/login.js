@@ -12,8 +12,7 @@ export const goLoginPage = () => {
   document.getElementById('root').innerHTML = `<div id="form-login" class="form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
           <ul class="list"
-            <li class="text-box">
-
+            <li >
               <label for="mail"></label>
               <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
             </li>
