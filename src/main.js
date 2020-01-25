@@ -3,7 +3,7 @@ import { goHome } from './pages/home.js';
 import './firebase-init.js';
 
 // #Observador de autenticación
-const stateObserved = () => {
+export const stateObserved = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.

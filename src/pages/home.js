@@ -1,13 +1,13 @@
-export const goHome = (displayName) => {
+export const goHome = () => {
     document.getElementById("root").innerHTML =
         `<div class= "inicio-home" id= "inicio"></div>
             <div class="topnav">
                 <a id = "home" href="#">Home</a>
-                <a id = "perfil"href="#">Perfil</a>
+                <a id = "perfil" href="#">Perfil</a>
                 <a id = "btnLogOut" href="#">Cerrar sesión</a>
                 <a href="#" style="float:right">Configuración</a>
             </div>`;
-    // BOTON LOGOUT.
+    // Boton Logout.
     document.getElementById("btnLogOut").addEventListener("click", () => {
         firebase.auth().signOut()
             .then(function () {
@@ -18,7 +18,10 @@ export const goHome = (displayName) => {
                 console.log("error saliendo")
             })
     });
-
+    //Boton perfil
+    document.getElementById("perfil").addEventListener("click", () => {
+   document.getElementById("root").innerHTML =  perfilEdit();
+    })
 }
 
 
