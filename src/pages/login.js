@@ -47,12 +47,13 @@ const buildListenerForm = () => {
     // BOTON PARA IR A PÁGINA DE REGISTRO DE NUEVO USUARIO
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
-        <div id="createAccount"><p class="fontRoot">Ingresa un correo y una contraseña para tu crear tu cuenta</p>
-        <input type="text"  id="newTextMail" class="inputLogin" placeholder="Correo electrónico.">
-        <input type="password" id="newTextPassword" class="inputLogin" placeholder="Contraseña.">
+        <div id="createAccount" class="registerBox">
+        <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
+        <input type="text"  id="newTextMail" class="inputRegister" placeholder="Correo electrónico">
+        <input type="password" id="newTextPassword" class="inputRegister" placeholder="Contraseña">
         <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
-        <a class="fontRoot" id="loginBack">Volver</a></div>`;
-      
+        <a class="comeback" id="loginBack">Volver</a></div>`;
+
       // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
       document.getElementById('btnCreate').addEventListener('click', () => {
         const email = document.getElementById('newTextMail').value;
