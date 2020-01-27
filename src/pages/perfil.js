@@ -1,18 +1,19 @@
 export const perfilInfo = () => {
     const user = firebase.auth().currentUser;
     document.getElementById("perfil-content").innerHTML =
-        `<div class="container">
-          <div class="container-profile">
-            <div class="ft-perfil">
+        `<div class="card">
+          <div class="leftcolumn">
+            <div class="card">
               <img src= "${user.photoURL}" class="ft" alt="foto de perfil"/>
             </div>
           </div>
-          <div class="container-information"> 
-            <div class="information">
+          <div class="card"> 
+            <div class="leftcolumn">
               <span class="name">${user.displayName}</span>
               <span class="info">${user.email}</span>
             </div>
             <button  id="btnSave-perfil" type="submit">Editar perfil</button>
+            <div class="rightcolumn">
             </div>`
 
     /* Button editar perfil */
