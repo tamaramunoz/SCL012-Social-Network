@@ -7,21 +7,6 @@ export const goHome = () => {
                 <a href="#" style="float:right">Configuración</a>
             </div>`;
 
-<<<<<<< HEAD
-//  BOTON LOGOUT.
-   document.getElementById('btnLogOut').addEventListener('click', () => {
-     firebase.auth().signOut()
-       .then(() => {
-         goLoginPage();
-         console.log('salir');
-       })
-       .catch((error) => {
-         console.log('error saliendo');
-       });
-   });
-  };
-   //   #Agregando Posts
-=======
     // Boton Logout.
    document.getElementById("btnLogOut").addEventListener("click", () => {
     firebase.auth().signOut()
@@ -36,7 +21,6 @@ export const goHome = () => {
 };
 
 //   #Agregando Posts
->>>>>>> afe8f2da9c855254db767dd8c9cfcf62828a07ff
 //   db.collection("posts").add({
 //   name: "Tami",
 //   place: "Cajon del Maipo",
