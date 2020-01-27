@@ -238,7 +238,7 @@ li span p:hover {
         width: 150px;
         display: flex;
         justify-content: center;
-    }
+}
 
     .fontRoot {  
         color: #ecf0f1;
@@ -259,4 +259,11 @@ li span p:hover {
       float: none;
       width: 100%;
     }
+
+.container {
+    margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
 }
