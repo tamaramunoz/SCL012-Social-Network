@@ -1,5 +1,5 @@
 import {
-    perfilEdit
+    perfilInfo
 } from './perfil.js';
 
 export const goHome = () => {
@@ -14,7 +14,7 @@ export const goHome = () => {
 
     // Button perfil
     document.getElementById("btn-perfil").addEventListener("click", (evt) => {
-        perfilEdit();
+        perfilInfo();
     });
 
     // Button Logout.

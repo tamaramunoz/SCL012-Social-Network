@@ -29,12 +29,3 @@ export const createAccount = (email, password) => {
     alert(`${errorCode}`);
   });
 };
-
-export const logout = () => {
-  firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-    console.log(error);
-  });
-};
