@@ -13,7 +13,6 @@ export const emailLogin = (email, password) => {
   });
 };
 
-
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
@@ -28,14 +27,5 @@ export const createAccount = (email, password) => {
       alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
     }
     alert(`${errorCode}`);
-  });
-};
-
-export const logout = () => {
-  firebase.auth().signOut().then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-    console.log(error);
   });
 };
