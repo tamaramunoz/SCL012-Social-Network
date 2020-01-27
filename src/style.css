@@ -231,8 +231,8 @@ li span p:hover {
     }
 }
   
-  /* Responsive layout */
-  @media screen and (max-width: 360px) {
+  /* Responsive layout - when the screen is less than 360px wide */
+  @media all and (max-width: 360px) {
     .logo {
         margin: 0 auto;
         width: 150px;
