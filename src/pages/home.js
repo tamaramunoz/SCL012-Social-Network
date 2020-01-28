@@ -6,14 +6,15 @@ import {
 
 export const goHome = () => {
   document.getElementById('root').innerHTML = `
-        <div class="inicio-home" id="inicio"></div>
-            <nav class="topnav">
-                <a id="btn-home" href="#">Home</a>
+        <header class="header">
+          <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
+          <nav class="topnav">
+                <a id="home" href="#">Home</a>
                 <a id="btn-perfil">Perfil</a>
-                <a id="btnLogOut" href="#" style="float:right">Cerrar sesión</a>
-            </nav>
-        <div id="perfil-content"></div>
-        <div id="home-content"</div>`;
+          </nav>
+          <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
+        </header>
+        <div id="perfil-content"></div>`;
 
   /* Button perfil */
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
@@ -28,11 +29,11 @@ export const goHome = () => {
   // Button Logout.
   document.getElementById('btnLogOut').addEventListener('click', () => {
     firebase.auth().signOut()
-      .then(function () {
+      .then(() => {
         goLoginPage();
         console.log('salir');
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log('error saliendo');
       });
   });

@@ -1,6 +1,6 @@
 export const perfilInfo = () => {
   const user = firebase.auth().currentUser;
-  document.getElementById("perfil-content").innerHTML =
+  document.getElementById('perfil-content').innerHTML =
     `<div class="row">
        <div class="side">
          <div class="fakeimg">
@@ -10,8 +10,8 @@ export const perfilInfo = () => {
              <span class="name">${user.displayName}</span>
              <span class="email">${user.email}</span><br>
          </div>
-         <div class= "btnSave">
-             <button  id="btnSave-perfil" type="submit">Editar perfil</button>
+         <div>
+             <button id="btnSave-perfil" type="submit" class="btnSave">Editar perfil</button>
          </div>
        </div>
        <div class="main"> 

@@ -13,7 +13,6 @@ export const emailLogin = (email, password) => {
   });
 };
 
-
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
@@ -37,14 +36,20 @@ export const createAccount = (email, password) => {
 
 /* Validación de correo al usuario */
 const check = () => {
+<<<<<<< HEAD
   const user = firebase.auth.getInstance().getcurrentUser();
   user.sendEmailVerification()
   then(() => {}).catch((error) => {});
 }
+=======
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(() => {}).catch((error) => {});
+};
+>>>>>>> 583c4eb3377639d6008e42d230113e39dc04dfcd
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {
   firebase.auth().sendPasswordResetEmail(email)
     .then(() => {})
     .catch((error) => {});
-}
+};
