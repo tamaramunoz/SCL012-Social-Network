@@ -1,5 +1,5 @@
 export const perfilInfo = () => {
-
+  window.location.hash = '/profile';
   const user = firebase.auth().currentUser;
   document.getElementById('perfil-content').innerHTML =
     `<div class="row">
@@ -27,6 +27,7 @@ export const perfilInfo = () => {
 };
 
 const perfilEdit = () => {
+  window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
   document.getElementById("perfil-content").innerHTML =
     `<div id="modalUser" class="w3-modal"></div>

@@ -9,6 +9,7 @@ import {
 
 //  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
+  window.location.hash = '/singIn';
   document.getElementById('root').innerHTML = `
     <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
       <div id="form-login" class="form-login">
@@ -48,6 +49,7 @@ const buildListenerForm = () => {
     });
     // BOTON PARA IR A PÁGINA DE REGISTRO DE NUEVO USUARIO
     document.getElementById('registro').addEventListener('click', () => {
+      window.location.hash = '/singUp';
       document.getElementById('root').innerHTML = `
       <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
         <div id="createAccount" class="registerBox">
