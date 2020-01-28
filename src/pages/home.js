@@ -10,8 +10,7 @@ export const goHome = () => {
             <div class="topnav">
                 <a id="home" href="#">Home</a>
                 <a id="btn-perfil">Perfil</a>
-                <a id="btnLogOut" href="#">Cerrar sesión</a>
-                <a href="#" style="float:right">Configuración</a>
+                <a id="btnLogOut" href="#" style="float:right">Cerrar sesión</a>
             </div>
         <div id="perfil-content"></div>`;
 
