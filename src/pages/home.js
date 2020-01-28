@@ -5,16 +5,24 @@ import {
 } from './perfil.js';
 
 export const goHome = () => {
+ 
   document.getElementById('root').innerHTML = `
-        <header class="header">
+  <header class="header">
           <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
           <nav class="topnav">
                 <a id="home" href="#">Home</a>
                 <a id="btn-perfil">Perfil</a>
           </nav>
           <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
-        </header>
-        <div id="perfil-content"></div>`;
+  </header>
+        <div id="perfil-content"></div>
+  <div id="writePost" class="post" >  
+  <h4> Escribe tu post </h4>  
+  <textarea name="message" id="message" class="texts"></textarea> 
+  <div id="encodeDecodeButton">
+  <input type="button" value="Postear" id="buttonPost" class="firstButton">
+  </div>           
+  </div>`
 
   /* Button perfil */
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
@@ -22,8 +30,8 @@ export const goHome = () => {
   });
 
    /* Button home */
-   document.getElementById('btn-home').addEventListener('click', () => {
-
+   document.getElementById('home').addEventListener('click', () => {
+goHome();
   });
 
   // Button Logout.

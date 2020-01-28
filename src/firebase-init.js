@@ -12,5 +12,14 @@ const firebaseConfig = {
 // INICIALIZACIÓN DE FIREBASE
 firebase.initializeApp(firebaseConfig);
 
-// inicializando cloud firestore
-// let db = firebase.firestore();
+const saveData = (userId, name, email, pictureUrl) => {
+  firebase.database().ref('users/' + userId)
+  set({
+    username: name,
+    email: email,
+    picture: pictureUrl,
+    id: userId,
+  });
+};
+
+
