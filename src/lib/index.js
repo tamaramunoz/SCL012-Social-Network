@@ -12,24 +12,11 @@ export const emailLogin = (email, password) => {
     console.log(error);
   });
 };
-/* Guardar datos de login en BD */
-const saveData = (userId, name, email, imageUrl) => {
-  firebase.database().ref('users/' + userId).
-  set({
-    username: name,
-    email: email,
-    picture: imageUrl,
-    id: userId,
-  });
-}
 
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-    saveData(user.uid, username, user.email, picture);
-    check();
-    alert('Tu usuario ha sido registrado! \nConfirma el mensaje de verificación en tu correo y seguidamente puedes Iniciar Sesión');
-    check();
+    check ();
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -49,9 +36,16 @@ export const createAccount = (email, password) => {
 
 /* Validación de correo al usuario */
 const check = () => {
+<<<<<<< HEAD
+  const user = firebase.auth.getInstance().getcurrentUser();
+  user.sendEmailVerification()
+  then(() => {}).catch((error) => {});
+}
+=======
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {}).catch((error) => {});
 };
+>>>>>>> 583c4eb3377639d6008e42d230113e39dc04dfcd
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {

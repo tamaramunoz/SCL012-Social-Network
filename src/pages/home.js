@@ -16,9 +16,14 @@ export const goHome = () => {
         </header>
         <div id="perfil-content"></div>`;
 
-  // Button perfil
+  /* Button perfil */
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
     perfilInfo();
+  });
+
+   /* Button home */
+   document.getElementById('btn-home').addEventListener('click', () => {
+
   });
 
   // Button Logout.

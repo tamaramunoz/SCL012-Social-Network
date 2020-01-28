@@ -1,5 +1,4 @@
 export const perfilInfo = () => {
-
   const user = firebase.auth().currentUser;
   document.getElementById('perfil-content').innerHTML =
     `<div class="row">
