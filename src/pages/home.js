@@ -24,11 +24,11 @@ export const goHome = () => {
   // Button Logout.
   document.getElementById('btnLogOut').addEventListener('click', () => {
     firebase.auth().signOut()
-      .then(function () {
+      .then(() => {
         goLoginPage();
         console.log('salir');
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log('error saliendo');
       });
   });
