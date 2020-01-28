@@ -1,7 +1,11 @@
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
   event.preventDefault();
-  firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then (function(user) {
+    alert("User signed in");
+  })
+  .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     if (errorCode === 'auth/wrong-password') {
@@ -16,7 +20,8 @@ export const emailLogin = (email, password) => {
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-    check ();
+    veriFyUser();
+    alert ("User account created");
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -35,21 +40,19 @@ export const createAccount = (email, password) => {
 };
 
 /* Validación de correo al usuario */
-const check = () => {
-<<<<<<< HEAD
-  const user = firebase.auth.getInstance().getcurrentUser();
-  user.sendEmailVerification()
-  then(() => {}).catch((error) => {});
-}
-=======
+const veriFyUser = () => {
   const user = firebase.auth().currentUser;
-  user.sendEmailVerification().then(() => {}).catch((error) => {});
+  user.sendEmailVerification().then(() => {
+    alert("Email sent!");
+  }).catch("Email not sent!"); 
 };
->>>>>>> 583c4eb3377639d6008e42d230113e39dc04dfcd
+
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {
-  firebase.auth().sendPasswordResetEmail(email)
-    .then(() => {})
-    .catch((error) => {});
+  firebase.auth().sendPasswordResetEmail(user.email)
+    .then(() => {
+      alert("Email sent!");
+    })
+    .catch("Email not sent!");
 };

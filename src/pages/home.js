@@ -21,10 +21,10 @@ export const goHome = () => {
     perfilInfo();
   });
 
-   /* Button home */
+   /* Button home 
    document.getElementById('btn-home').addEventListener('click', () => {
 
-  });
+  });*/
 
   // Button Logout.
   document.getElementById('btnLogOut').addEventListener('click', () => {
