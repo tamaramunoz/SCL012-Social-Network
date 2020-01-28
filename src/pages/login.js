@@ -10,6 +10,7 @@ import {
 //  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
 export const goLoginPage = () => {
   document.getElementById('root').innerHTML = `
+    <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
       <div id="form-login" class="form-login">
         <form action="/form-page" method="post" onsubmit="return validation()">
           <ul class="list"
@@ -48,6 +49,7 @@ const buildListenerForm = () => {
     // BOTON PARA IR A PÁGINA DE REGISTRO DE NUEVO USUARIO
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
+      <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
         <div id="createAccount" class="registerBox">
           <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
           <input type="text"  id="newTextMail" class="inputRegister" placeholder="Correo electrónico">

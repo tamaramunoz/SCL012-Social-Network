@@ -51,11 +51,11 @@ export const createAccount = (email, password) => {
 const check = () => {
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {}).catch((error) => {});
-}
+};
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {
   firebase.auth().sendPasswordResetEmail(email)
     .then(() => {})
     .catch((error) => {});
-}
+};
