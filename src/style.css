@@ -260,34 +260,58 @@ li span p:hover {
       width: 100%;
     }
 
-}
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.rightcolumn {   
-    float: left;
-    width: 75%;
+}/* Column container */
+.row {  
+    display: flex;
+    text-align:center;
   }
   
-  /* Right column */
-  .leftcolumn {
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
     float: left;
     width: 25%;
     background-color: #f1f1f1;
     padding-left: 20px;
+    padding-top: 20px;
+        
   }
   
-  /* Fake image */
-  .ft {
+  /* Main column */
+  .main {
+    float: left;
+    width: 75%;
+    background-color: #f1f1f1;
+    padding-top: 20px;
+  }
+  
+  /* Fake image, just for this example */
+  .fakeimg {
     background-color: #aaa;
     width: 100%;
-    padding: 20px;
+    height:200px;
   }
-  
-  /* Add a card effect for articles */
-  .car{
-    background-color: white;
-    padding: 20px;
+
+#btnSave-perfil{
+      display: grid;
+      width: -webkit-fill-available
+  }
+.picture{
+    width: 100%;
+} 
+
+.name{
+    display: flex;
     margin-top: 20px;
-  }
+}
+
+.email{
+    display: flex;
+}
+
+.info{
+    width: auto;
+}
+  
   
 
