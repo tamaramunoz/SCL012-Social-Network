@@ -27,6 +27,7 @@ export const perfilInfo = () => {
 };
 
 const perfilEdit = () => {
+  const user = firebase.auth().currentUser;
   document.getElementById("perfil-content").innerHTML =
     `<div id="modalUser" class="w3-modal"></div>
              <div class="perfil-section"
@@ -41,9 +42,10 @@ const perfilEdit = () => {
                      <label for="Email"></label> 
                      <input class="datosPerfil" type="email" id="perfilEmail " name="email" Placeholder="Email" required   value=${user.email} />
                      <label for="Pasword"></label> 
-                     <input class="datosPerfil" type="password" id="perfilPassword" name="password-example" Placeholder="Contraseña" required   />
+                     <input class="datosPerfil" type="password" id="perfilPassword" name="password-example" Placeholder="Contraseña" />
                      <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
                         </div>
                 </form>
          </div>`;
+
 }

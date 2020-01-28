@@ -272,8 +272,7 @@ li span p:hover {
     float: left;
     width: 25%;
     background-color: #f1f1f1;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 10px;
         
   }
   
@@ -284,17 +283,24 @@ li span p:hover {
     background-color: #f1f1f1;
     padding-top: 20px;
   }
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .side, .main {   
+      width: 100%;
+      padding: 10px;
+    }
+  }
   
   /* Fake image, just for this example */
   .fakeimg {
     background-color: #aaa;
-    width: 100%;
-    height:200px;
+    width: 50%;
+    height:120;
   }
 
 #btnSave-perfil{
-      display: grid;
-      width: -webkit-fill-available
+      display: block;
   }
 .picture{
     width: 100%;
@@ -312,6 +318,13 @@ li span p:hover {
 .info{
     width: auto;
 }
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {   
+      flex-direction: column;
+    }
+  }
   
   
 
