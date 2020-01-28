@@ -6,14 +6,14 @@ import {
 
 export const goHome = () => {
   document.getElementById('root').innerHTML = `
-        <div class="inicio-home" id="inicio"></div>
-        
-            <nav class="topnav">
+        <header class="header">
+          <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
+          <nav class="topnav">
                 <a id="home" href="#">Home</a>
                 <a id="btn-perfil">Perfil</a>
-                <a id="btnLogOut" href="#">Cerrar sesión</a>
-                <a href="#" style="float:right">Configuración</a>
-            </nav>
+          </nav>
+          <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
+        </header>
         <div id="perfil-content"></div>`;
 
   // Button perfil
