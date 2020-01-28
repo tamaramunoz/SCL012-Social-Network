@@ -41,12 +41,12 @@ export const createAccount = (email, password) => {
 
 /* Validación de correo al usuario */
 const veriFyUser = () => {
+
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {
     alert("Email sent!");
   }).catch("Email not sent!"); 
 };
-
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {

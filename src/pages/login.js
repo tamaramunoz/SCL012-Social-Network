@@ -36,7 +36,7 @@ export const goLoginPage = () => {
 //  FUNCIÓN INICIA BOTÓN DE LOGIN CUANDO ESTE EXISTA
 const buildListenerForm = () => {
   try {
-    // BOTON PARA LOGUEAR CON EMAIL Y PASSWORD
+    // BOTÓN PARA LOGUEAR CON EMAIL Y PASSWORD
     document.getElementById('form-login').addEventListener('submit', () => {
       const email = document.getElementById('txtMail').value;
       const password = document.getElementById('txtPassword').value;
@@ -44,9 +44,15 @@ const buildListenerForm = () => {
     });
     // BOTÓN LOGIN CON GOOGLE
     document.getElementById('loginGoogle').addEventListener('click', () => {
-      googleLogin();
+      let variable = googleLogin();
+      variable.then(function(result){
+        console.log(result.user);
+        
+        document.getElementById('root').innerHTML="<img src='"+result.user.photoURL+"' />";
+      });
     });
-    // BOTON PARA IR A PÁGINA DE REGISTRO DE NUEVO USUARIO
+
+    // BOTÓN CREACIÓN DE CUENTA
     document.getElementById('registro').addEventListener('click', () => {
       document.getElementById('root').innerHTML = `
       <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
@@ -64,14 +70,13 @@ const buildListenerForm = () => {
         const password = document.getElementById('newTextPassword').value;
         createAccount(email, password);
       });
-
-      //  BOTÓN REGRESO AL LOGIN
+      // BÓTÓN DE REGRESO AL LOGIN
       document.getElementById('loginBack').addEventListener('click', () => {
         goLoginPage();
       });
     });
   } catch (e) {
-    //  console.error(e);
+    console.error(e);
     document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
   }
 };
