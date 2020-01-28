@@ -7,19 +7,19 @@ import {
 export const goHome = () => {
   document.getElementById('root').innerHTML = `
         <div class="inicio-home" id="inicio"></div>
-            <div class="topnav">
+        
+            <nav class="topnav">
                 <a id="home" href="#">Home</a>
                 <a id="btn-perfil">Perfil</a>
                 <a id="btnLogOut" href="#">Cerrar sesión</a>
                 <a href="#" style="float:right">Configuración</a>
-            </div>
+            </nav>
         <div id="perfil-content"></div>`;
 
   // Button perfil
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
     perfilInfo();
   });
-  
 
   // Button Logout.
   document.getElementById('btnLogOut').addEventListener('click', () => {

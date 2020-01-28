@@ -197,6 +197,7 @@ li span p:hover {
 }
 
 
+
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
@@ -213,6 +214,7 @@ li span p:hover {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
 }
   
   /* Change color on hover */
