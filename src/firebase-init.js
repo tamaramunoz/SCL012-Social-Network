@@ -12,14 +12,36 @@ const firebaseConfig = {
 // INICIALIZACIÓN DE FIREBASE
 firebase.initializeApp(firebaseConfig);
 
-const saveData = (userId, name, email, pictureUrl) => {
-  firebase.database().ref('users/' + userId)
-  set({
+const database = firebase.database();
+
+
+ const writeNewPost = (uid, username, picture, title, body) => {
+  // A post entry.
+  let postData = {
+    author: username,
+    uid: uid,
+    body: body,
+    title: title,
+    starCount: 0,
+    authorPic: picture
+  };
+console.log(postData);
+  // Get a key for a new Post.
+ let newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+ let updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  return firebase.database().ref().update(updates);
+}
+
+export const writeUserData = (userId, name, email, imageUrl) => {
+  firebase.database().ref('users/' + userId).set({
     username: name,
     email: email,
-    picture: pictureUrl,
-    id: userId,
+    profile_picture : imageUrl
   });
-};
 
-
+}

@@ -436,6 +436,13 @@ li span p:hover {
     resize:none;
     }
     
+#postsUsers{
+height: 20rem;
+width: 90%;
+background-color: #661E13;
+color: #cccccc;
+}
+
   .firstButton{
    height: 35px;
    float: left;

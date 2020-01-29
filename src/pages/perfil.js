@@ -26,7 +26,9 @@ export const perfilInfo = () => {
 };
 
 const perfilEdit = () => {
+ 
   const user = firebase.auth().currentUser;
+
   document.getElementById("perfil-content").innerHTML =
     `<div id="modalUser" class="w3-modal"></div>
              <div class="perfil-section"
@@ -46,5 +48,5 @@ const perfilEdit = () => {
                         </div>
                 </form>
          </div>`;
-
+        
 }
