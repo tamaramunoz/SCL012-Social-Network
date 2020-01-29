@@ -10,8 +10,7 @@ import {
 
 
 export const goHome = () => {
-
-
+  window.location.hash = '/home';
   document.getElementById('root').innerHTML = `
   <header class="header">
           <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
