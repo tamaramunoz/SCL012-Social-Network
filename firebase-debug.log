@@ -105,3 +105,29 @@
 [debug] [2020-01-28T21:56:03.978Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-28T22:28:40.182Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T22:28:40.186Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2020-01-28T22:28:40.187Z] CLI Version:   7.12.1
+[debug] [2020-01-28T22:28:40.187Z] Platform:      linux
+[debug] [2020-01-28T22:28:40.187Z] Node Version:  v13.5.0
+[debug] [2020-01-28T22:28:40.260Z] Time:          Tue Jan 28 2020 19:28:40 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-28T22:28:40.260Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T22:28:40.261Z] 
+[debug] [2020-01-28T22:28:40.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-28T22:28:40.342Z] > authorizing via signed-in user
+[debug] [2020-01-28T22:28:40.343Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
+[debug] [2020-01-28T22:28:40.348Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
+
+[debug] [2020-01-28T22:28:41.719Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-28T22:28:41.726Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
+ 
+[debug] [2020-01-28T22:28:43.019Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-28T22:28:43.026Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
+ 
+[debug] [2020-01-28T22:28:43.518Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5005
