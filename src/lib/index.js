@@ -1,6 +1,3 @@
-import {
-  goLoginPage
-} from '../pages/login.js';
 
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
@@ -51,7 +48,7 @@ const veriFyUser = () => {
 };
 
 /* Cambio de contraseña */
-const resetPassword = (email) => {
+export const resetPassword = () => {
   firebase.auth().sendPasswordResetEmail(user.email)
     .then(() => {
       alert("Email sent!");
