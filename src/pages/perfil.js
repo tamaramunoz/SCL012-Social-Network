@@ -21,7 +21,7 @@ export const perfilInfo = () => {
      </div>`;
 
   /* Button editar perfil */
-  document.getElementById("btnSave-perfil").addEventListener("click", () => {
+  document.getElementById('btnSave-perfil').addEventListener('click', () => {
     perfilEdit();
   });
 };
@@ -30,7 +30,7 @@ const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
 
-  document.getElementById("perfil-content").innerHTML =
+  document.getElementById('perfil-content').innerHTML =
     `<div id="modalUser" class="w3-modal"></div>
              <div class="perfil-section"
                     <div class="container-profile">
@@ -49,5 +49,4 @@ const perfilEdit = () => {
                         </div>
                 </form>
          </div>`;
-        
-}
+};

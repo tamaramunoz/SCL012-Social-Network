@@ -6,8 +6,8 @@ import {
 export const emailLogin = (email, password) => {
   event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      alert("User signed in");
-    })
+    alert("User signed in");
+  })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;

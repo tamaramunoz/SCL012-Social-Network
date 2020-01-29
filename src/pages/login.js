@@ -48,7 +48,6 @@ const buildListenerForm = () => {
       let variable = googleLogin();
       variable.then(function(result){
         console.log(result.user);
-        
         document.getElementById('root').innerHTML="<img src='"+result.user.photoURL+"' />";
       });
     });
