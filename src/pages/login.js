@@ -13,7 +13,7 @@ export const goLoginPage = () => {
   document.getElementById('root').innerHTML = `
     <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
       <div id="form-login" class="form-login">
-        <form action="/form-page" method="post" onsubmit="return validation()">
+        <form action="/form-page" method="post" >
           <ul class="list"
             <li >
               <label for="mail"></label>
