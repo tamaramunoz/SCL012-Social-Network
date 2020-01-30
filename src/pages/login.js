@@ -61,6 +61,7 @@ const buildListenerForm = () => {
       <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
         <div id="createAccount" class="registerBox">
           <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
+          <input type="text"  id="newName" class="inputRegister" placeholder="Nombre">
           <input type="text"  id="newTextMail" class="inputRegister" placeholder="Correo electrónico">
           <input type="password" id="newTextPassword" class="inputRegister" placeholder="Contraseña">
           <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
@@ -69,9 +70,10 @@ const buildListenerForm = () => {
 
       // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
       document.getElementById('btnCreate').addEventListener('click', () => {
+        const name = document.getElementById('newName').value;
         const email = document.getElementById('newTextMail').value;
         const password = document.getElementById('newTextPassword').value;
-        createAccount(email, password);
+        createAccount(name, email, password);
       });
       // BÓTÓN DE REGRESO AL LOGIN
       document.getElementById('loginBack').addEventListener('click', () => {
