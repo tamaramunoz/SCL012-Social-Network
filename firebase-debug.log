@@ -1,225 +1,30 @@
-[debug] [2020-01-28T12:41:44.480Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:41:44.483Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-28T12:41:44.483Z] CLI Version:   7.12.1
-[debug] [2020-01-28T12:41:44.483Z] Platform:      linux
-[debug] [2020-01-28T12:41:44.483Z] Node Version:  v13.5.0
-[debug] [2020-01-28T12:41:44.484Z] Time:          Tue Jan 28 2020 09:41:44 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-28T12:41:44.484Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:41:44.484Z] 
-[debug] [2020-01-28T12:41:44.504Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-28T12:41:44.504Z] > authorizing via signed-in user
-[debug] [2020-01-28T12:41:44.505Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-28T12:41:44.507Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
+[debug] [2020-01-30T12:32:35.617Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:32:35.619Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2020-01-30T12:32:35.620Z] CLI Version:   7.12.1
+[debug] [2020-01-30T12:32:35.620Z] Platform:      linux
+[debug] [2020-01-30T12:32:35.620Z] Node Version:  v13.5.0
+[debug] [2020-01-30T12:32:35.620Z] Time:          Thu Jan 30 2020 09:32:35 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-30T12:32:35.621Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:32:35.621Z] 
+[debug] [2020-01-30T12:32:35.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-30T12:32:35.695Z] > authorizing via signed-in user
+[debug] [2020-01-30T12:32:35.695Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
+[debug] [2020-01-30T12:32:35.697Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-30T12:32:35.697Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-30T12:32:35.879Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:32:35.928Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
 
-[debug] [2020-01-28T12:41:45.766Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T12:41:45.769Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
+[debug] [2020-01-30T12:32:37.147Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:32:37.150Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
  
-[debug] [2020-01-28T12:41:46.232Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:32:38.473Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
 [info] 
-[debug] [2020-01-28T12:41:46.237Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
+[debug] [2020-01-30T12:32:38.481Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
  
-[debug] [2020-01-28T12:41:46.733Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2020-01-28T12:47:24.801Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:47:24.804Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-28T12:47:24.804Z] CLI Version:   7.12.1
-[debug] [2020-01-28T12:47:24.805Z] Platform:      linux
-[debug] [2020-01-28T12:47:24.805Z] Node Version:  v13.5.0
-[debug] [2020-01-28T12:47:24.805Z] Time:          Tue Jan 28 2020 09:47:24 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-28T12:47:24.805Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:47:24.805Z] 
-[debug] [2020-01-28T12:47:24.814Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-28T12:47:24.814Z] > authorizing via signed-in user
-[debug] [2020-01-28T12:47:24.814Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-28T12:47:24.817Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-28T12:47:27.174Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T12:47:27.176Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-28T12:47:27.860Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-28T12:47:27.865Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-28T12:47:28.786Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:32:39.816Z] <<< HTTP RESPONSE 200
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5005
-[debug] [2020-01-28T12:52:22.360Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:52:22.363Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-28T12:52:22.363Z] CLI Version:   7.12.1
-[debug] [2020-01-28T12:52:22.363Z] Platform:      linux
-[debug] [2020-01-28T12:52:22.363Z] Node Version:  v13.5.0
-[debug] [2020-01-28T12:52:22.364Z] Time:          Tue Jan 28 2020 09:52:22 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-28T12:52:22.364Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T12:52:22.364Z] 
-[debug] [2020-01-28T12:52:22.372Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-28T12:52:22.372Z] > authorizing via signed-in user
-[debug] [2020-01-28T12:52:22.373Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-28T12:52:22.375Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-28T12:52:23.542Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T12:52:23.548Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-28T12:52:24.662Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-28T12:52:24.669Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-28T12:52:25.308Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5010
-[debug] [2020-01-28T21:55:59.804Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T21:55:59.807Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-28T21:55:59.807Z] CLI Version:   7.12.1
-[debug] [2020-01-28T21:55:59.807Z] Platform:      linux
-[debug] [2020-01-28T21:55:59.807Z] Node Version:  v13.5.0
-[debug] [2020-01-28T21:55:59.901Z] Time:          Tue Jan 28 2020 18:55:59 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-28T21:55:59.902Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T21:55:59.902Z] 
-[debug] [2020-01-28T21:55:59.976Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-28T21:55:59.976Z] > authorizing via signed-in user
-[debug] [2020-01-28T21:55:59.976Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-28T21:55:59.978Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-01-28T21:55:59.979Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2020-01-28T21:56:00.153Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T21:56:00.213Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-28T21:56:01.412Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T21:56:01.416Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-28T21:56:02.667Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-28T21:56:02.674Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-28T21:56:03.978Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2020-01-28T22:28:40.182Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T22:28:40.186Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-28T22:28:40.187Z] CLI Version:   7.12.1
-[debug] [2020-01-28T22:28:40.187Z] Platform:      linux
-[debug] [2020-01-28T22:28:40.187Z] Node Version:  v13.5.0
-[debug] [2020-01-28T22:28:40.260Z] Time:          Tue Jan 28 2020 19:28:40 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-28T22:28:40.260Z] ----------------------------------------------------------------------
-[debug] [2020-01-28T22:28:40.261Z] 
-[debug] [2020-01-28T22:28:40.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-28T22:28:40.342Z] > authorizing via signed-in user
-[debug] [2020-01-28T22:28:40.343Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-28T22:28:40.348Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-28T22:28:41.719Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-28T22:28:41.726Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-28T22:28:43.019Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-28T22:28:43.026Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-28T22:28:43.518Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5005
-[debug] [2020-01-29T00:29:51.377Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T00:29:51.381Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-29T00:29:51.381Z] CLI Version:   7.12.1
-[debug] [2020-01-29T00:29:51.382Z] Platform:      linux
-[debug] [2020-01-29T00:29:51.382Z] Node Version:  v13.5.0
-[debug] [2020-01-29T00:29:51.410Z] Time:          Tue Jan 28 2020 21:29:51 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-29T00:29:51.410Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T00:29:51.410Z] 
-[debug] [2020-01-29T00:29:51.490Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-29T00:29:51.491Z] > authorizing via signed-in user
-[debug] [2020-01-29T00:29:51.491Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-29T00:29:51.493Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-01-29T00:29:51.494Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2020-01-29T00:29:51.693Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-29T00:29:51.745Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-29T00:29:52.935Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-29T00:29:52.938Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-29T00:29:54.068Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-29T00:29:54.075Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-29T00:29:55.355Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5010
-[debug] [2020-01-29T00:31:45.028Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T00:31:45.031Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-29T00:31:45.031Z] CLI Version:   7.12.1
-[debug] [2020-01-29T00:31:45.031Z] Platform:      linux
-[debug] [2020-01-29T00:31:45.031Z] Node Version:  v13.5.0
-[debug] [2020-01-29T00:31:45.032Z] Time:          Tue Jan 28 2020 21:31:45 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-29T00:31:45.032Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T00:31:45.032Z] 
-[debug] [2020-01-29T00:31:45.040Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-29T00:31:45.041Z] > authorizing via signed-in user
-[debug] [2020-01-29T00:31:45.041Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-29T00:31:45.043Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-29T00:31:46.200Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-29T00:31:46.203Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-29T00:31:47.358Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-29T00:31:47.367Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-29T00:31:48.640Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5015
-[debug] [2020-01-29T01:56:44.938Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T01:56:44.940Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2020-01-29T01:56:44.941Z] CLI Version:   7.12.1
-[debug] [2020-01-29T01:56:44.941Z] Platform:      linux
-[debug] [2020-01-29T01:56:44.941Z] Node Version:  v13.5.0
-[debug] [2020-01-29T01:56:45.025Z] Time:          Tue Jan 28 2020 22:56:44 GMT-0300 (hora de verano de Chile)
-[debug] [2020-01-29T01:56:45.026Z] ----------------------------------------------------------------------
-[debug] [2020-01-29T01:56:45.026Z] 
-[debug] [2020-01-29T01:56:45.075Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-29T01:56:45.075Z] > authorizing via signed-in user
-[debug] [2020-01-29T01:56:45.075Z] [iam] checking project bitacora-d5fc4 for permissions ["firebase.projects.get"]
-[debug] [2020-01-29T01:56:45.077Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-01-29T01:56:45.078Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- <request body omitted>
-[debug] [2020-01-29T01:56:45.347Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-29T01:56:45.398Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/bitacora-d5fc4:testIamPermissions  
-
-[debug] [2020-01-29T01:56:46.604Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-29T01:56:46.605Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4  
- 
-[debug] [2020-01-29T01:56:48.059Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/home/vianny/projects/trak-1/SCL012-Social-Network'...
-[info] 
-[debug] [2020-01-29T01:56:48.064Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/bitacora-d5fc4/webApps/-/config  
- 
-[debug] [2020-01-29T01:56:49.377Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[info] i  hosting: Serving hosting files from: src
-[info] ✔  hosting: Local server: http://localhost:5020

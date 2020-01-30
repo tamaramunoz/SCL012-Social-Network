@@ -179,6 +179,19 @@ li span p:hover {
     background-color: #cccccc;
 }
 
+.reset {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
 .comeback {  
     color: #ecf0f1;
     text-align: center;
@@ -468,4 +481,6 @@ color: #cccccc;
    margin-right:5px;
   }
 
- 
+ #usuario{
+     background-color: aqua;
+ }
