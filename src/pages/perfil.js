@@ -64,7 +64,7 @@ const updateProfile = () =>{
     displayName:"",
     photoUrl: "",
     });
-    user.updateEmail(email).then(() => {
+    user.updateEmail().then(() => {
       
     }).cath((error) => {
       alert("Email not updated");
