@@ -11,7 +11,6 @@ body{
 }
 
 /* Style Login Page */
-
 .logo {
     margin: 0 auto;
     width: 15%;
@@ -199,7 +198,7 @@ li span p:hover {
     text-decoration-line: none ;
 }
 
-/* Style home page */
+/* Style Home Page */
 
 
 /* Style the top navigation bar */
@@ -338,6 +337,8 @@ li span p:hover {
 
 }
 
+/* Style Profile */
+
 /* Column container */
 .row {  
     display: flex;
@@ -416,7 +417,8 @@ li span p:hover {
       flex-direction: column;
     }
   }
-  
+
+  /* Style Posts */
   .post{
     height: 120px;
     padding:30px;
