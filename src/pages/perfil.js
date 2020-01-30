@@ -29,7 +29,7 @@ export const perfilInfo = () => {
 const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
-  document.getElementById("perfil-content").innerHTML =
+  document.getElementById('perfil-content').innerHTML =
     `<div id="modalUser" class="w3-modal">
              <div class="perfil-section"
                     <div class="container-profile">
@@ -48,27 +48,26 @@ const perfilEdit = () => {
                         </div>
                 </form>
          </div>`;
-         
-/* Button actualizar perfil */
-         document.getElementById("save-perfil").addEventListener("click",()=>{
-          updateProfile();
-        })  
-}
+
+  /* Button actualizar perfil */
+  document.getElementById('save-perfil').addEventListener('click', () => {
+    updateProfile();
+  });
+};
 
 /* editar Datos perfil */
-const updateProfile = () =>{
+const updateProfile = () => {
   const user = firebase.auth().currentUser;
   if (user != null) {
     user.updateProfile({
-      displayName: ""
+      displayName: '',
     });
     user.updateEmail().then(() => {
-      alert("Email updated");
+      alert('Email updated');
     }).cath((error) => {
-      alert("Email not updated");
-    })
-
-  }else {
-    alert("There is no user!");
+      alert('Email not updated');
+    });
+  } else {
+    alert('There is no user!');
   }
-}
+};
