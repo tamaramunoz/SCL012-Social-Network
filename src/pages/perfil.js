@@ -48,10 +48,11 @@ const perfilEdit = () => {
                         </div>
                 </form>
          </div>`;
-         
+
 /* Button actualizar perfil */
          document.getElementById("save-perfil").addEventListener("click",()=>{
           updateProfile();
+          
         })  
 }
 
@@ -60,10 +61,11 @@ const updateProfile = () =>{
   const user = firebase.auth().currentUser;
   if (user != null) {
     user.updateProfile({
-      displayName: ""
+    displayName:"",
+    photoUrl: "",
     });
-    user.updateEmail().then(() => {
-      alert("Email updated");
+    user.updateEmail(email).then(() => {
+      
     }).cath((error) => {
       alert("Email not updated");
     })
