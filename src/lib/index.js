@@ -4,10 +4,11 @@ import {
 
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
-  event.preventDefault();
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    alert("User signed in");
-  })
+  // event.preventDefault();
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert('User signed in');
+    })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -20,11 +21,19 @@ export const emailLogin = (email, password) => {
     });
 };
 
+/* Validación de correo al usuario */
+const veriFyUser = () => {
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(() => {
+    alert('Email sent!');
+  }).catch('Email not sent!');
+};
+
 // CREAR CUENTA MAIL Y PWD
 export const createAccount = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
     veriFyUser();
-    alert("User account created");
+    alert('User account created');
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -39,22 +48,13 @@ export const createAccount = (email, password) => {
     }
     alert(`${errorCode}`);
   });
-
-};
-
-/* Validación de correo al usuario */
-const veriFyUser = () => {
-  const user = firebase.auth().currentUser
-  user.sendEmailVerification().then(() => {
-    alert("Email sent!");
-  }).catch("Email not sent!");
 };
 
 /* Cambio de contraseña */
 const resetPassword = (email) => {
   firebase.auth().sendPasswordResetEmail(user.email)
     .then(() => {
-      alert("Email sent!");
+      alert('Email sent!');
     })
-    .catch("Email not sent!");
+    .catch('Email not sent!');
 };

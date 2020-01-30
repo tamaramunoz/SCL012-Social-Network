@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 
- const writeNewPost = (uid, username, picture, title, body) => {
+const writeNewPost = (uid, username, picture, title, body) => {
   // A post entry.
   let postData = {
     author: username,
@@ -27,10 +27,10 @@ const database = firebase.database();
   };
 console.log(postData);
   // Get a key for a new Post.
- let newPostKey = firebase.database().ref().child('posts').push().key;
+  let newPostKey = firebase.database().ref().child('posts').push().key;
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
- let updates = {};
+  let updates = {};
   updates['/posts/' + newPostKey] = postData;
   updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
@@ -43,5 +43,4 @@ export const writeUserData = (userId, name, email, imageUrl) => {
     email: email,
     profile_picture : imageUrl
   });
-
-}
+};
