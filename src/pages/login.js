@@ -5,6 +5,7 @@ import {
 import {
   emailLogin,
   createAccount,
+  resetPassword,
 } from '../lib/index.js';
 
 //  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
@@ -27,7 +28,8 @@ export const goLoginPage = () => {
               <button class="login" id="btnLogin" type="submit">Iniciar Sesión</button>
               <button class="register" id="registro" type="button">Registrate</button>
               <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo2.png" class="icon" alt=""><p>Registrate con Google</p></span>
-            </li>
+              <a id="reset" class="reset" href="url">¿Olvidó su contraseña?</a>
+              </li>
           </ul>
         </form>
       </div>`;
@@ -48,7 +50,6 @@ const buildListenerForm = () => {
       let variable = googleLogin();
       variable.then(function(result){
         console.log(result.user);
-        
         document.getElementById('root').innerHTML="<img src='"+result.user.photoURL+"' />";
       });
     });
@@ -60,6 +61,7 @@ const buildListenerForm = () => {
       <img src="img/logoOcre.png" class="logo" alt="logo-bitacora"/>
         <div id="createAccount" class="registerBox">
           <p class="fontRoot">Ingresa un correo y una contraseña para crear tu cuenta</p>
+          <input type="text"  id="newName" class="inputRegister" placeholder="Nombre">
           <input type="text"  id="newTextMail" class="inputRegister" placeholder="Correo electrónico">
           <input type="password" id="newTextPassword" class="inputRegister" placeholder="Contraseña">
           <button id="btnCreate" class="btnLogin">Crear Cuenta</button>
@@ -68,14 +70,27 @@ const buildListenerForm = () => {
 
       // BOTON QUE CREA CUENTA PARA NUEVO USUARIO
       document.getElementById('btnCreate').addEventListener('click', () => {
+        const name = document.getElementById('newName').value;
         const email = document.getElementById('newTextMail').value;
         const password = document.getElementById('newTextPassword').value;
-        createAccount(email, password);
+        createAccount(name, email, password);
       });
       // BÓTÓN DE REGRESO AL LOGIN
       document.getElementById('loginBack').addEventListener('click', () => {
         goLoginPage();
       });
+
+      /* button reset password
+      document.getElementById('reset').addEventListener('click', () => {
+        resetPassword();
+        document.getElementById('root').innerHTML = 
+        `<div>
+        <form  class="list" action="/form-page" method="post" >
+              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
+         </form>   
+        </div>`
+      });*/
+
     });
   } catch (e) {
     console.error(e);
