@@ -21,7 +21,7 @@ export const perfilInfo = () => {
      </div>`;
 
   /* Button editar perfil */
-  document.getElementById("btnSave-perfil").addEventListener("click", () => {
+  document.getElementById('btnSave-perfil').addEventListener('click', () => {
     perfilEdit();
   });
 };
@@ -29,7 +29,6 @@ export const perfilInfo = () => {
 const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
-
   document.getElementById("perfil-content").innerHTML =
     `<div id="modalUser" class="w3-modal">
              <div class="perfil-section"
@@ -48,7 +47,8 @@ const perfilEdit = () => {
                      <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
                         </div>
                 </form>
-         </div>`;
+         </div>`;eveloper
+=======
 /* Button actualizar perfil */
          document.getElementById("save-perfil").addEventListener("click",()=>{
           updateProfile();
