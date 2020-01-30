@@ -4,11 +4,6 @@ import {
   perfilInfo,
 } from './perfil.js';
 
-
-
-
-
-
 export const goHome = () => {
   window.location.hash = '/home';
   document.getElementById('root').innerHTML = `
@@ -24,12 +19,26 @@ export const goHome = () => {
   <div id="writePost" class="post" >  
   <h4> Escribe tu post </h4>
   <div id="postsUsers"> 
-  <ul id="lista"></ul> </div>
+  <ul id="lista"><div id="usuario"></div></ul> </div>
   <textarea name="message" id="message" class="texts"></textarea> 
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
   </div>           
-  </div>`
+  </div>`;
+
+//RECUPERACIÓN DE POSTS
+const ulList = document.getElementById('lista');
+
+const starCountRef = firebase.database().ref().child('posts/');
+starCountRef.on('child_added', snap => {
+const li = document.createElement('li');
+li.innerText = snap.val().body;
+ulList.appendChild(li);
+});
+
+
+
+
 
 document.getElementById('buttonPost').addEventListener('click', () => {
   const database = firebase.database();
@@ -41,7 +50,7 @@ document.getElementById('buttonPost').addEventListener('click', () => {
   let picture = user.photoURL;
   let title = '';
   let body = document.getElementById('message').value;
-
+  document.getElementById("message").innerHTML="";
   const writeNewPost = (uid, username, picture, title, body) => {
    // A post entry.
    let postData = {
