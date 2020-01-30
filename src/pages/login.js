@@ -5,6 +5,7 @@ import {
 import {
   emailLogin,
   createAccount,
+  resetPassword,
 } from '../lib/index.js';
 
 //  GENERACIÓN DE PÁGINA DE LOGUEO CON FIREBASE
@@ -27,7 +28,8 @@ export const goLoginPage = () => {
               <button class="login" id="btnLogin" type="submit">Iniciar Sesión</button>
               <button class="register" id="registro" type="button">Registrate</button>
               <span id="loginGoogle" class="loginGoogle"><img src="./img/googleLogo2.png" class="icon" alt=""><p>Registrate con Google</p></span>
-            </li>
+              <a id="reset" class="reset" href="url">¿Olvidó su contraseña?</a>
+              </li>
           </ul>
         </form>
       </div>`;
@@ -48,7 +50,6 @@ const buildListenerForm = () => {
       let variable = googleLogin();
       variable.then(function(result){
         console.log(result.user);
-        
         document.getElementById('root').innerHTML="<img src='"+result.user.photoURL+"' />";
       });
     });
@@ -76,6 +77,18 @@ const buildListenerForm = () => {
       document.getElementById('loginBack').addEventListener('click', () => {
         goLoginPage();
       });
+
+      /* button reset password
+      document.getElementById('reset').addEventListener('click', () => {
+        resetPassword();
+        document.getElementById('root').innerHTML = 
+        `<div>
+        <form  class="list" action="/form-page" method="post" >
+              <input class="inputLogin" type="email" id="txtMail" name="user_mail" Placeholder="Correo electrónico" />
+         </form>   
+        </div>`
+      });*/
+
     });
   } catch (e) {
     console.error(e);

@@ -36,10 +36,6 @@ li.innerText = snap.val().body;
 ulList.appendChild(li);
 });
 
-
-
-
-
 document.getElementById('buttonPost').addEventListener('click', () => {
   const database = firebase.database();
   const user = firebase.auth().currentUser;
@@ -74,22 +70,19 @@ document.getElementById('buttonPost').addEventListener('click', () => {
  }
   
 
+
     writeNewPost(uid, username, picture, title, body);
     //  printPost();
-      
   });
-
-
-
 
   /* Button perfil */
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
     perfilInfo();
   });
 
-   /* Button home */
-   document.getElementById('home').addEventListener('click', () => {
-goHome();
+  /* Button home */
+  document.getElementById('home').addEventListener('click', () => {
+    goHome();
   });
 
   // Button Logout.
@@ -104,10 +97,6 @@ goHome();
       });
   });
 };
-
-
-
-
 
 
 //   #Agregando Posts
