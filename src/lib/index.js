@@ -1,7 +1,7 @@
 
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
-  // event.preventDefault();
+ event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       alert('User signed in');
