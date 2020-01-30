@@ -47,8 +47,8 @@ const perfilEdit = () => {
                      <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
                         </div>
                 </form>
-         </div>`;eveloper
-=======
+         </div>`;
+         
 /* Button actualizar perfil */
          document.getElementById("save-perfil").addEventListener("click",()=>{
           updateProfile();
