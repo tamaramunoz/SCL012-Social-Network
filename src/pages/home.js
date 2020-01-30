@@ -19,7 +19,7 @@ export const goHome = () => {
   <div id="writePost" class="post" >  
   <h4> Escribe tu post </h4>
   <div id="postsUsers"> 
-  <ul id="lista"><div id="usuario"></div></ul> </div>
+  <div id="lista"><div id="usuario"></div></div> </div>
   <textarea name="message" id="message" class="texts"></textarea> 
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
@@ -27,19 +27,24 @@ export const goHome = () => {
   </div>`;
 
 //RECUPERACIÓN DE POSTS
-const ulList = document.getElementById('lista');
+const divPosts = document.getElementById('lista');
 
 const starCountRef = firebase.database().ref().child('posts/');
 starCountRef.on('child_added', snap => {
-const li = document.createElement('li');
-li.innerText = snap.val().body;
-ulList.appendChild(li);
+const thePostDiv = document.createElement('div');
+thePostDiv.innerHTML = `<div id="post_${snap.key}">
+  <div><img src="${snap.val().authorPic || ''}">${snap.val().author}</div>
+  <div><p>${snap.val().body}</p></div>
+  <div><p>${snap.val().createDate}</p></div>
+  <hr>
+  </div>`;
+divPosts.appendChild(thePostDiv);
 });
 
 
 
 
-
+//BOTÓN PARA POSTEAR
 document.getElementById('buttonPost').addEventListener('click', () => {
   const database = firebase.database();
   const user = firebase.auth().currentUser;
@@ -59,7 +64,8 @@ document.getElementById('buttonPost').addEventListener('click', () => {
      body: body,
      title: title,
      starCount: 0,
-     authorPic: picture
+     authorPic: picture,
+     createDate: new Date(),
    };
  console.log(postData);
    // Get a key for a new Post.
