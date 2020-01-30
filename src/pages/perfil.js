@@ -29,16 +29,15 @@ export const perfilInfo = () => {
 const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
-
-  document.getElementById('perfil-content').innerHTML =
-    `<div id="modalUser" class="w3-modal"></div>
+  document.getElementById("perfil-content").innerHTML =
+    `<div id="modalUser" class="w3-modal">
              <div class="perfil-section"
                     <div class="container-profile">
                         <div class="ft-perfil">
                          <img src= "${user.photoURL}" class="ft" alt="foto de perfil"/>
                         </div>
                     </div>
-                 <form class="perfil.container">
+                 <form class="perfil-container">
                      <label for="Nombre completo"></label>
                      <input class="datosPerfil" type="text" id="perfilNombre" name="username" Placeholder="Nombre completo" required     value=${user.displayName} />
                      <label for="Email"></label> 
@@ -48,5 +47,28 @@ const perfilEdit = () => {
                      <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
                         </div>
                 </form>
-         </div>`;
-};
+         </div>`;eveloper
+=======
+/* Button actualizar perfil */
+         document.getElementById("save-perfil").addEventListener("click",()=>{
+          updateProfile();
+        })  
+}
+
+/* editar Datos perfil */
+const updateProfile = () =>{
+  const user = firebase.auth().currentUser;
+  if (user != null) {
+    user.updateProfile({
+      displayName: ""
+    });
+    user.updateEmail().then(() => {
+      alert("Email updated");
+    }).cath((error) => {
+      alert("Email not updated");
+    })
+
+  }else {
+    alert("There is no user!");
+  }
+}
