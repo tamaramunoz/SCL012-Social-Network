@@ -26,7 +26,10 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.1.2",
     "firebase-functions-test": "^0.1.7",
+<<<<<<< HEAD
+=======
     "firebase-mock": "^2.3.2",
+>>>>>>> 705ec82ec7bef2de763d556cfb2456f4ed7f00e0
     "htmlhint": "^0.11.0",
     "jest": "^24.9.0",
     "regenerator-runtime": "^0.13.1",

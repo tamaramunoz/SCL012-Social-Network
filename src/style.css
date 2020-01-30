@@ -454,6 +454,7 @@ height: 20rem;
 width: 90%;
 background-color: #661E13;
 color: #cccccc;
+overflow:scroll;
 }
 
   .firstButton{
