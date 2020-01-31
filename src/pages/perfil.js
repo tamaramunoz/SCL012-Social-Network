@@ -60,11 +60,11 @@ const updateProfile = () => {
   const user = firebase.auth().currentUser;
   if (user != null) {
     user.updateProfile({
-      displayName: '',
+      displayName:'',
+      photoUrl: '',
     });
-    user.updateEmail().then(() => {
-      alert('Email updated');
-    }).cath((error) => {
+    user.updateEmail(email).then(() => {
+    }).catch((error) => {
       alert('Email not updated');
     });
   } else {

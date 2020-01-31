@@ -1,7 +1,7 @@
 
 // LOGIN CON EMAIL Y PWD
 export const emailLogin = (email, password) => {
-  // event.preventDefault();
+  event.preventDefault();
   firebase.auth().signInWithEmailAndPassword(email, password)
     .catch((error) => {
       const errorCode = error.code;
@@ -24,13 +24,13 @@ const veriFyUser = () => {
 };
 
 // CREAR CUENTA MAIL Y PWD
-export const createAccount = (email, password) => {
+export const createAccount = (name, email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
     veriFyUser();
     alert('User account created');
   }).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
     if (errorCode === 'auth/email en uso') {
       alert('Correo en uso');
     }
