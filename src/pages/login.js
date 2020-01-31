@@ -90,7 +90,6 @@ const buildListenerForm = () => {
          </form>   
         </div>`
       });*/
-
     });
   } catch (e) {
     console.error(e);
