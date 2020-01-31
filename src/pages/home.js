@@ -23,8 +23,9 @@ export const goHome = () => {
   <textarea name="message" id="message" class="texts"></textarea> 
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
-  </div>           
+  </div>          
   </div>`;
+
 
 //RECUPERACIÓN DE POSTS
 const divPosts = document.getElementById('lista');
@@ -105,5 +106,3 @@ document.getElementById('buttonPost').addEventListener('click', () => {
       });
   });
 };
-
-
