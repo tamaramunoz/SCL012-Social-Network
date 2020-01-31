@@ -434,7 +434,7 @@ li span p:hover {
   /* Style Posts */
   .post{
     height: 120px;
-    padding:30px;
+    padding:10px;
     color:#5D576B;  
     }
 
@@ -449,14 +449,16 @@ li span p:hover {
     color:#5D576B;  
     margin-top: 10px;
     resize:none;
+    padding-left: 10px;
     }
     
 #postsUsers{
-height: 20rem;
-width: 90%;
-background-color: #661E13;
-color: #cccccc;
+
+width: auto;
+background-color:rgb(238, 227, 227);
+color: #272525;
 overflow:scroll;
+border-radius: 10px;
 }
 
   .firstButton{
@@ -482,6 +484,50 @@ overflow:scroll;
    margin-right:5px;
   }
 
- #usuario{
-     background-color: aqua;
- }
+
+  .encabezado {
+    width: 100%;
+    height:1%;
+    margin: 1em;
+    margin-right: 10px;
+    font-size: 100%;
+    border-radius: 1em;
+    display: inline-flex;
+    text-align: center;
+    color: #3a3333;
+    align-content: space-between;
+    align-items: baseline;
+    padding-top:19px;
+  
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+
+.encabezado img{
+    width: 3%;
+    height:1%;
+    padding: 0;
+    align-self: center;  
+    border: 1px solid #FFFFFF;
+}
+
+hr{
+    height: 3px;
+    background-color: #3a3333;
+}
+
+#usuario{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.textPosts{
+    padding-left: 30px;
+}
+
+#likes{
+    height: 20px;
+    background-color: rgb(46, 78, 13);
+    padding-left: 30px;
+    color: #cccccc;
+}

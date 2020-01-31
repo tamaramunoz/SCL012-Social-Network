@@ -50,24 +50,20 @@ const perfilEdit = () => {
          </div>`;
 
   /* Button actualizar perfil */
-  document.getElementById('save-perfil').addEventListener('click', () => {
+  document.getElementById("save-perfil").addEventListener("click", () => {
     updateProfile();
-  });
-};
+
+  })
+}
 
 /* editar Datos perfil */
 const updateProfile = () => {
-  const user = firebase.auth().currentUser;
-  if (user != null) {
-    user.updateProfile({
-      displayName:'',
-      photoUrl: '',
-    });
-    user.updateEmail(email).then(() => {
-    }).catch((error) => {
-      alert('Email not updated');
-    });
-  } else {
-    alert('There is no user!');
-  }
-};
+    const name = document.getElementById("perfilNombre").value;
+    const user = firebase.auth().currentUser;
+    if (user != null) {
+      user.updateProfile({
+        displayName: name,
+        photoUrl: "",
+      }).cath((error));
+      }
+    };
