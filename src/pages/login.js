@@ -48,7 +48,7 @@ const buildListenerForm = () => {
     // BOTÓN LOGIN CON GOOGLE
     document.getElementById('loginGoogle').addEventListener('click', () => {
       let variable = googleLogin();
-      variable.then(function(result){
+      variable.then(function(result) {
         console.log(result.user);
         document.getElementById('root').innerHTML="<img src='"+result.user.photoURL+"' />";
       });

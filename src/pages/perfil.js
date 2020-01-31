@@ -29,7 +29,7 @@ export const perfilInfo = () => {
 const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
-  document.getElementById("perfil-content").innerHTML =
+  document.getElementById('perfil-content').innerHTML =
     `<div id="modalUser" class="w3-modal">
              <div class="perfil-section"
                     <div class="container-profile">
@@ -66,4 +66,4 @@ const updateProfile = () => {
         photoUrl: "",
       }).cath((error));
       }
-    }
+    };
