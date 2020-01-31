@@ -2,12 +2,15 @@
     margin: 0;
 }
 
-body{
+.login-register{
     background-image: url("img/trekking22.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed;  
     font-family:'BenchNine', sans-serif !important;
+}
+.bodyHome {
+    background-color: ivory !important;
 }
 
 /* Style Login Page */
