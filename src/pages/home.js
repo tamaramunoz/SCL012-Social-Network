@@ -15,6 +15,7 @@ export const goHome = () => {
           </nav>
           <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
   </header>
+  <body class= "bodyHome">
         <div id="perfil-content"></div>
   <div id="writePost" class="post" >  
   <h4 class="publicaciones">PUBLICACIONES</h4>
@@ -24,7 +25,8 @@ export const goHome = () => {
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
   </div>          
-  </div>`;
+  </div>
+  </body>`;
 
 
   // RECUPERACIÓN DE POSTS
