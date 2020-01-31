@@ -34,7 +34,7 @@ const perfilEdit = () => {
              <div class="perfil-section"
                     <div class="container-profile">
                         <div class="ft-perfil">
-                         <img src= "${user.photoURL}" class="ft" alt="foto de perfil"/>
+                         <img id= "photoChanges" src= "${user.photoURL}" class="ft" alt="foto de perfil"/>
                         </div>
                     </div>
                  <form class="perfil-container">
@@ -60,10 +60,11 @@ const perfilEdit = () => {
 const updateProfile = () => {
     const name = document.getElementById("perfilNombre").value;
     const user = firebase.auth().currentUser;
+    const photo = document.getElementById("photoChanges").value;
     if (user != null) {
       user.updateProfile({
         displayName: name,
-        photoUrl: "",
+        photoURL: photo,
       }).cath((error));
       }
     }
