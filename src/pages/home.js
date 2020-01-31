@@ -34,6 +34,7 @@ createPosts.on('child_added', snap => {
 const thePostDiv = document.createElement('div');
 thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
+  <hr>
   <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
   <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
   <hr>
@@ -70,7 +71,7 @@ document.getElementById('buttonPost').addEventListener('click', () => {
      authorPic: picture,
      createDate: date.toUTCString(),
    };
- console.log(postData);
+ 
    // Get a key for a new Post.
   let newPostKey = firebase.database().ref().child('posts').push().key;
  
@@ -85,6 +86,105 @@ document.getElementById('buttonPost').addEventListener('click', () => {
     writeNewPost(uid, username, picture, place, body);
     //  printPost();
   });
+
+
+
+
+//*********************************************************************************** */
+
+// Función para eliminar Post
+const deletePost = (id) => {
+  const questions = confirm('¿Está seguro de eliminar?');
+  if (questions) {
+    const userId = firebase.auth().currentUser.uid;
+    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
+    firebase.database().ref().child('posts/' + id).remove();
+    while (publications.firstChild) publications.removeChild(publications.firstChild);
+    alert('Post eliminado');
+    window.location.reload();
+  }
+}
+
+// Función para editar Post
+window.editPost = (id) => {
+  const currentPost = document.getElementById(id);
+  const currentTextarea = currentPost.querySelector('.textarea-post');
+  currentTextarea.disabled = false;
+  const editButton = currentPost.querySelector('.edit-button');
+  const saveButton = currentPost.querySelector('.save-button');
+  editButton.classList.add('hidden');
+  saveButton.classList.remove('hidden');
+  currentTextarea.focus();
+}
+
+// Función para guardar post editado
+window.savePostEdit = (id) => {
+  const currentPost = document.getElementById(id);
+  const currentTextarea = currentPost.querySelector('.textarea-post');
+  const editButton = currentPost.querySelector('.edit-button');
+  const saveButton = currentPost.querySelector('.save-button');
+  const userId = firebase.auth().currentUser.uid;
+
+  firebase.database().ref('posts/')
+  .once('value', (postsRef) => { 
+      const posts = postsRef.val();
+      const postEdit = posts[id];
+  
+      let postEditRef = {
+        id: postEdit.id,
+        author: postEdit.author,
+        newPost: currentTextarea.value,
+        privacy: postEdit.privacy,
+        likeCount: postEdit.likeCount,
+        usersLikes: postEdit.usersLikes || []
+      }
+  
+      let updates = {};
+      updates['/posts/' + id] = postEditRef;
+      updates['/user-posts/' + userId + '/' + id] = postEditRef;
+      return firebase.database().ref().update(updates);
+
+      currentTextarea.disabled = true;
+      saveButton.classList.add('hidden');
+      editButton.classList.remove('hidden');
+    });
+}
+
+//****************************************************************************************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // BOTÓN QUE LLEVA AL PERFIL DEL USUARIO
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {

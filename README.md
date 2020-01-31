@@ -6,14 +6,20 @@ Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
 sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
 vivir sin ellas.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+Te presentamos [Bitácora](https://.github.io/SCL012-Social-Network/src/index.html), la nueva red social turística que despertará al explorador que todos llevamos dentro y nos acompañará a explorar nuevos lugares, llevándonos a vivir inolvidables aventuras.
 
 * ### **1.1 Usuario**
+¿Cuántas veces has estado con deseos de salir a disfrutar de un buen lugar en tu tiempo libre y te has encontrado con que:
+- No conoces los lugares que se encuentran en los alrededores de tu ciudad para acampar o bien salir por el día, o simplemente hacer una caminata?.
+
+Y cuando te decides por algún lugar...
+- No tienes referencias de este; no sabes que llevar, no tienes con quien ir o no tienes los implemenntos necesarios para tu excursión.
+
+[Bitácora](https://.github.io/SCL012-Social-Network/src/index.html), es la red social que estabas esperando y que te ayudará a resolver todas las problemáticas antes mencionadas, permitiendo hacer de tus próximas salidas, en tu tiempo libre, una experiencia inolvidable.  
+
+
+
+
 
 En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
 usuarios y cómo llegaste a la definición final de tu producto. Es importante
@@ -29,6 +35,7 @@ Investigaciones que hicimos de otras aplicaciones
 * ### **1.3 Objetivos de la Aplición**
 
 ## 2. Metodología UX
+
 
 * ### **2.1 Encuesta**
 
@@ -55,8 +62,14 @@ Hacer test de usuario con Loom
 Imagen de que pasamos todos los test unitarios
 
 ## 4. Futuras Mejoras
-
 Qué le vamos a mejorar
+
+La próxima versión de Bitácora, te permitirá:
+
+- Ofrecer tus servicios como guía a otros usuarios que los necesiten,
+- Contactar a otros usuarios de la plataforma para organizar excursiones en las que podrán seleccionar un guía.
+- Vender, Arrendar o intercambiar equipo para la próxima excursión.
+
 
 ## 5. Herramientas
 

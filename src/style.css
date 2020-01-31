@@ -456,7 +456,7 @@ width: auto;
 background-color:rgb(238, 227, 227);
 color: #272525;
 overflow:scroll;
-border-radius: 10px;
+/*border-radius: 10px;*/
 }
 
   .firstButton{
@@ -489,13 +489,13 @@ border-radius: 10px;
     margin: 1em;
     margin-right: 10px;
     font-size: 100%;
-    border-radius: 1em;
+    /*border-radius: 1em*/
     display: inline-flex;
     text-align: center;
     color: #3a3333;
     align-content: space-between;
     align-items: baseline;
-    padding-top:19px;
+    padding-top:5px;
   
     padding-left: 19px;
     padding-right: 19px;
@@ -510,8 +510,8 @@ border-radius: 10px;
 }
 
 hr{
-    height: 3px;
-    background-color: #3a3333;
+    height: 1px;
+    background-color: #d6d6d6;
 }
 
 #usuario{
@@ -525,7 +525,21 @@ hr{
 
 #likes{
     height: 20px;
-    background-color: rgb(46, 78, 13);
+    background-color: rgb(199, 188, 196);
     padding-left: 30px;
-    color: #cccccc;
+    color: #242020;
 }
+
+#message{
+    width: 100%;
+}
+
+#footer{
+    clear:both;
+    text-align: center;
+    font-size:12px ;
+    width: 100%;
+    color:white;
+    background-color:#5D576B;
+    }
+    
