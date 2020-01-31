@@ -44,9 +44,6 @@ thePostDiv.innerHTML = `<div id="post${snap.key}">
 divPosts.appendChild(thePostDiv);
 });
 
-
-
-
 //BOTÓN PARA POSTEAR
 document.getElementById('buttonPost').addEventListener('click', () => {
   const database = firebase.database();
