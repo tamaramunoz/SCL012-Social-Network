@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-.login-register{
+body{
     background-image: url("img/trekking22.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -391,11 +391,6 @@ li span p:hover {
     cursor: pointer;
   }
 
-  .btnSave:hover {
-    background-color: #54606b;
-  }
-
-
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
     .side, .main {   
@@ -439,80 +434,67 @@ li span p:hover {
     }
   }
 
-/* Style Posts */
-.postsUsers {
-    display: flex;
-    overflow:scroll;
+  /* Style Posts */
+  .post{
+    height: 120px;
     padding:10px;
-}
+    color:#5D576B;  
+    }
 
-.postBox {
-    margin-top: 20px;
-    margin-left: 10%;
-    background-color: #f2f2f2;
-    color: #34495e;
-    width: 75%;
-    border-radius: 10px;
-}
-
-.texts {
+  .texts{
     height: 5rem;
-    width: 50%;
-    background-color:#f7f1e3;
-    border-radius: 15px;
-    font-family: 'Quicksand', sans-serif;
+    width: 90%;
+    background-color:rgb(238, 227, 227);
+    border-radius:8px;
+    padding:1 0px;
+    font-family: Verdana;
     font-size: 15px; 
-    color:#34495e;  
-    margin-top: 15px;
+    color:#5D576B;  
+    margin-top: 10px;
     resize:none;
-    margin-left: 20%;
+    padding-left: 10px;
+    }
+    
+#postsUsers{
+
+width: auto;
+background-color:rgb(238, 227, 227);
+color: #272525;
+overflow:scroll;
+/*border-radius: 10px;*/
 }
 
-.publicaciones {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-    font-weight: bolder;
-    color: #b2bec3;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.listPosts {
-    font-family: 'Quicksand', sans-serif;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.firstButton {
-    color: #ecf0f1;
-    padding: 10px;
-    background-color: #34495e;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    border-radius: 10px;
-    border-style: none;
-    width: 100px;
-    cursor: pointer;
-    margin-bottom: 50px;
-}
+  .firstButton{
+   height: 35px;
+   float: left;
+   width:153px;
+   padding: 5px;
+   font-size: 15px;
+   color:#FDFDFF;  
+   background-color:#661E13;
+   border-radius: 8px;
+   margin-left:5px;
+   border:1px solid #5D576B;
+   }
    
-.firstButton:hover {
-    background-color: #54606b;
-}
+   .firstButton:hover{
+    background-color: rgb(209, 56, 76);
+    }
 
-#buttonPost {
+   #buttonPost{
    height: 40px;
    padding-top:10px;
    margin-right:5px;
-   margin-left: 20%;
-}
+  }
 
-.encabezado {
+
+  .encabezado {
     width: 100%;
     height:1%;
     margin: 1em;
     margin-right: 10px;
     font-size: 100%;
+    /*border-radius: 1em*/
     display: inline-flex;
     text-align: center;
     color: #3a3333;
@@ -522,9 +504,9 @@ li span p:hover {
   
     padding-left: 19px;
     padding-right: 19px;
-}
+  }
 
-.encabezado img {
+.encabezado img{
     width: 3%;
     height:1%;
     padding: 0;
@@ -532,37 +514,37 @@ li span p:hover {
     border: 1px solid #FFFFFF;
 }
 
-hr {
+hr{
     height: 1px;
     background-color: #d6d6d6;
 }
 
-#usuario {
+#usuario{
     margin-left: 20px;
     text-align: left;
 }
 
-.textPosts {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.textPosts{
     padding-left: 30px;
 }
 
-#likes {
+#likes{
     height: 20px;
-    background-color: #CAD3C8;
+    background-color: rgb(199, 188, 196);
     padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #34495e;
+    color: #242020;
 }
 
-#footer {
+#message{
+    width: 100%;
+}
+
+#footer{
     clear:both;
     text-align: center;
     font-size:12px ;
     width: 100%;
     color:white;
     background-color:#5D576B;
-}
+    }
     
