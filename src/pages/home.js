@@ -36,19 +36,6 @@ const createPosts = firebase.database().ref().child('posts/');
 
 createPosts.on('child_added', snap => {
   const thePostDiv = document.createElement('div');
-  const deletePost = (id) => {
-    const questions = confirm('¿Deseas eliminar post?');
-  if (questions) {
-    const userId = firebase.auth().currentUser.uid;
-    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
-    firebase.database().ref().child('posts/' + id).remove();
-    while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
-    alert('Se eliminó el post');
-      location.reload();
-      }
-    };
-  
-
 
 thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
@@ -59,8 +46,7 @@ thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="deletePost(snap.key)"></div>
   <hr>
   </div>`;
-  divPosts.appendChild(thePostDiv);
-  
+  divPosts.appendChild(thePostDiv); 
 
 });
 
@@ -114,7 +100,17 @@ document.getElementById('buttonPost').addEventListener('click', () => {
 
 // FUNCIÓN PARA ELIMINAR POSTS
  
-
+const deletePost = (id) => {
+  const questions = confirm('¿Deseas eliminar post?');
+  if (questions) {
+    const userId = firebase.auth().currentUser.uid;
+    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
+    firebase.database().ref().child('posts/' + id).remove();
+  while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
+    alert('Se eliminó el post');
+     location.reload();
+    }
+  };
 
  
 
