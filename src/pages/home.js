@@ -4,8 +4,10 @@ import {
   perfilInfo,
 } from './perfil.js';
 
+
 export const goHome = () => {
   window.location.hash = '/home';
+
   document.getElementById('root').innerHTML = `
   <header class="header">
           <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
@@ -26,23 +28,43 @@ export const goHome = () => {
   </div>           
   </div>`;
 
-//RECUPERACIÓN DE POSTS
-const divPosts = document.getElementById('lista');
+   
+
+  //CREACIÓN DE POSTS
+const divPosts = document.getElementById('postsUsers');
 const createPosts = firebase.database().ref().child('posts/');
 
 createPosts.on('child_added', snap => {
-const thePostDiv = document.createElement('div');
+  const thePostDiv = document.createElement('div');
+  const deletePost = (id) => {
+    const questions = confirm('¿Deseas eliminar post?');
+  if (questions) {
+    const userId = firebase.auth().currentUser.uid;
+    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
+    firebase.database().ref().child('posts/' + id).remove();
+    while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
+    alert('Se eliminó el post');
+      location.reload();
+      }
+    };
+  
+
+
 thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
   <hr>
   <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
   <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
   <hr>
-  <div id="likes">Likes</div>
+  <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="deletePost(snap.key)"></div>
   <hr>
   </div>`;
-divPosts.appendChild(thePostDiv);
+  divPosts.appendChild(thePostDiv);
+  
+
 });
+
+
 
 //BOTÓN PARA POSTEAR
 document.getElementById('buttonPost').addEventListener('click', () => {
@@ -71,7 +93,7 @@ document.getElementById('buttonPost').addEventListener('click', () => {
  
    // Get a key for a new Post.
   let newPostKey = firebase.database().ref().child('posts').push().key;
- 
+  document.getElementById("message").value="";
    // Write the new post's data simultaneously in the posts list and the user's post list.
   let updates = {};
    updates['/posts/' + newPostKey] = postData;
@@ -89,68 +111,12 @@ document.getElementById('buttonPost').addEventListener('click', () => {
 
 //*********************************************************************************** */
 
-// Función para eliminar Post
-const deletePost = (id) => {
-  const questions = confirm('¿Está seguro de eliminar?');
-  if (questions) {
-    const userId = firebase.auth().currentUser.uid;
-    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
-    firebase.database().ref().child('posts/' + id).remove();
-    while (publications.firstChild) publications.removeChild(publications.firstChild);
-    alert('Post eliminado');
-    window.location.reload();
-  }
-}
 
-// Función para editar Post
-window.editPost = (id) => {
-  const currentPost = document.getElementById(id);
-  const currentTextarea = currentPost.querySelector('.textarea-post');
-  currentTextarea.disabled = false;
-  const editButton = currentPost.querySelector('.edit-button');
-  const saveButton = currentPost.querySelector('.save-button');
-  editButton.classList.add('hidden');
-  saveButton.classList.remove('hidden');
-  currentTextarea.focus();
-}
-
-// Función para guardar post editado
-window.savePostEdit = (id) => {
-  const currentPost = document.getElementById(id);
-  const currentTextarea = currentPost.querySelector('.textarea-post');
-  const editButton = currentPost.querySelector('.edit-button');
-  const saveButton = currentPost.querySelector('.save-button');
-  const userId = firebase.auth().currentUser.uid;
-
-  firebase.database().ref('posts/')
-  .once('value', (postsRef) => { 
-      const posts = postsRef.val();
-      const postEdit = posts[id];
-  
-      let postEditRef = {
-        id: postEdit.id,
-        author: postEdit.author,
-        newPost: currentTextarea.value,
-        privacy: postEdit.privacy,
-        likeCount: postEdit.likeCount,
-        usersLikes: postEdit.usersLikes || []
-      }
-  
-      let updates = {};
-      updates['/posts/' + id] = postEditRef;
-      updates['/user-posts/' + userId + '/' + id] = postEditRef;
-      return firebase.database().ref().update(updates);
-
-      currentTextarea.disabled = true;
-      saveButton.classList.add('hidden');
-      editButton.classList.remove('hidden');
-    });
-}
-
-//****************************************************************************************************************** */
+// FUNCIÓN PARA ELIMINAR POSTS
+ 
 
 
-
+ 
 
 
 
@@ -204,6 +170,8 @@ window.savePostEdit = (id) => {
         console.log('error saliendo');
       });
   });
+
+
+
+
 };
-
-
