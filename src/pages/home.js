@@ -17,11 +17,12 @@ export const goHome = () => {
           </nav>
           <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
   </header>
+  <body class= "bodyHome">
         <div id="perfil-content"></div>
   <div id="writePost" class="post" >  
-  <h4> PUBLICACIONES </h4>
-  <div id="postsUsers"> 
-  <div id="lista"></div> </div>
+  <h4 class="publicaciones">PUBLICACIONES</h4>
+  <div class="postUsers" id="postsUsers"> 
+  <div class="listPosts" id="lista"></div> </div>
   <textarea name="message" id="message" class="texts"></textarea> 
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
@@ -43,7 +44,7 @@ thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
   <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
   <hr>
-  <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="deletePost(snap.key)"></div>
+  <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})"></div>
   <hr>
   </div>`;
   divPosts.appendChild(thePostDiv); 
@@ -100,7 +101,7 @@ document.getElementById('buttonPost').addEventListener('click', () => {
 
 // FUNCIÓN PARA ELIMINAR POSTS
  
-const deletePost = (id) => {
+window.deletePost = (id) => {
   const questions = confirm('¿Deseas eliminar post?');
   if (questions) {
     const userId = firebase.auth().currentUser.uid;
@@ -115,35 +116,7 @@ const deletePost = (id) => {
  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // ***********************************************************************//
 
   // BOTÓN QUE LLEVA AL PERFIL DEL USUARIO
   document.getElementById('btn-perfil').addEventListener('click', (evt) => {
@@ -167,7 +140,7 @@ const deletePost = (id) => {
       });
   });
 
-
-
-
 };
+
+
+

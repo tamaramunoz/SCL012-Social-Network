@@ -23,11 +23,20 @@ describe('emailLogin', () => {
   it('debería ser una función', () => {
     expect(typeof emailLogin).toBe('function');
   });
+
+  it('Debería poder iniciar sesion', () => emailLogin('tami.skt@gmail.com', 'tami2020')
+    .then((user) => {
+      expect(user.email).toBe('tami.skt@gmail.com');
+    }));
 });
 
 describe('createAccount', () => {
   it('debería ser una función', () => {
     expect(typeof createAccount).toBe('function');
+  });
+
+  it('deberia retornar un objeto', () => {
+    expect(typeof createAccount()).toBe('object');
   });
 });
 
