@@ -1,9 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
-import {
-  perfilInfo,
-} from './perfil.js';
-
+import { perfilInfo } from './perfil.js';
 
 export const goHome = () => {
   window.location.hash = '/home';
@@ -32,8 +27,6 @@ export const goHome = () => {
     </div>
   </section>`;
 
-
-
   //CREACIÓN DE POSTS
   const divPosts = document.getElementById('postsUsers');
   const createPosts = firebase.database().ref().child('posts/');
@@ -41,19 +34,18 @@ export const goHome = () => {
   createPosts.on('child_added', snap => {
     const thePostDiv = document.createElement('div');
 
-    thePostDiv.innerHTML = `<div id="post${snap.key}">
+    thePostDiv.innerHTML = `<div class="postBox" id="post${snap.key}">
   <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
   <hr>
-  <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
-  <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
+  <div id="datePost" class="textPosts">${snap.val().createDate}</div>
+  <div id="bodyPost" class="textPosts"><p>${snap.val().body}</p></div>
   <hr>
-  <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})"></div>
+  <input type="button" id="likes" value="Like"> 
+  <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})">
   <hr>
   </div>`;
     divPosts.appendChild(thePostDiv);
-
   });
-
 
 
   //BOTÓN PARA POSTEAR
@@ -68,7 +60,7 @@ export const goHome = () => {
     let place = '';
     let date = new Date();
     let body = document.getElementById('message').value;
-    document.getElementById("message").value = "";
+    document.getElementById('message').value = '';
     const writeNewPost = (uid, username, picture, place, body) => {
       // A post entry.
       let postData = {
@@ -77,13 +69,14 @@ export const goHome = () => {
         body: body,
         place: place,
         starCount: 0,
+        like: [],
         authorPic: picture,
         createDate: date.toUTCString(),
       };
 
       // Get a key for a new Post.
       let newPostKey = firebase.database().ref().child('posts').push().key;
-      document.getElementById("message").value = "";
+      document.getElementById('message').value = '';
       // Write the new post's data simultaneously in the posts list and the user's post list.
       let updates = {};
       updates['/posts/' + newPostKey] = postData;
@@ -96,11 +89,7 @@ export const goHome = () => {
     //  printPost();
   });
 
-
-
-
-  //*********************************************************************************** */
-
+  // *********************************************************************************** //
 
   // FUNCIÓN PARA ELIMINAR POSTS
 
@@ -116,8 +105,38 @@ export const goHome = () => {
     }
   };
 
+  // // Función para guardar post editado
+  // window.savePostEdit = (id) => {
+  //   const currentPost = document.getElementById(id);
+  //   const currentTextarea = currentPost.querySelector('.textarea-post');
+  //   const editButton = currentPost.querySelector('.edit-button');
+  //   const saveButton = currentPost.querySelector('.save-button');
+  //   const userId = firebase.auth().currentUser.uid;
 
+  //   firebase.database().ref('posts/')
+  //     .once('value', (postsRef) => { 
+  //       const posts = postsRef.val();
+  //       const postEdit = posts[id];
 
+  //       let postEditRef = {
+  //         id: postEdit.id,
+  //         author: postEdit.author,
+  //         newPost: currentTextarea.value,
+  //         privacy: postEdit.privacy,
+  //         likeCount: postEdit.likeCount,
+  //         usersLikes: postEdit.usersLikes || [],
+  //       };
+
+  //       let updates = {};
+  //       updates['/posts/' + id] = postEditRef;
+  //       updates['/user-posts/' + userId + '/' + id] = postEditRef;
+  //       return firebase.database().ref().update(updates);
+
+  //       currentTextarea.disabled = true;
+  //       saveButton.classList.add('hidden');
+  //       editButton.classList.remove('hidden');
+  //     });
+  // };
 
   // ***********************************************************************//
 
@@ -142,5 +161,4 @@ export const goHome = () => {
         console.log('error saliendo');
       });
   });
-
 };
