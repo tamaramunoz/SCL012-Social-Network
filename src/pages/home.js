@@ -17,28 +17,31 @@ export const goHome = () => {
           </nav>
           <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
   </header>
-  <body class= "bodyHome">
-        <div id="perfil-content"></div>
-  <div id="writePost" class="post" >  
-  <h4 class="publicaciones">PUBLICACIONES</h4>
-  <div class="postUsers" id="postsUsers"> 
-  <div class="listPosts" id="lista"></div> </div>
-  <textarea name="message" id="message" class="texts"></textarea> 
-  <div id="postButton">
-  <input type="button" value="Postear" id="buttonPost" class="firstButton">
-  </div>           
-  </div>`;
+  <section class= "bodyHome">
+    <div id="perfil-content"></div>
+    <div id="writePost" class="post" >  
+      <h4 class="publicaciones">PUBLICACIONES</h4>
+      <div class="postUsers" id="postsUsers"> 
+        <div class="listPosts" id="lista">
+          <textarea name="message" id="message" class="texts"></textarea> 
+          <div id="postButton">
+            <input type="button" value="Postear" id="buttonPost" class="firstButton">
+          </div>           
+        </div>
+      </div>
+    </div>
+  </section>`;
 
-   
+
 
   //CREACIÓN DE POSTS
-const divPosts = document.getElementById('postsUsers');
-const createPosts = firebase.database().ref().child('posts/');
+  const divPosts = document.getElementById('postsUsers');
+  const createPosts = firebase.database().ref().child('posts/');
 
-createPosts.on('child_added', snap => {
-  const thePostDiv = document.createElement('div');
+  createPosts.on('child_added', snap => {
+    const thePostDiv = document.createElement('div');
 
-thePostDiv.innerHTML = `<div id="post${snap.key}">
+    thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
   <hr>
   <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
@@ -47,48 +50,48 @@ thePostDiv.innerHTML = `<div id="post${snap.key}">
   <div id="likes"> <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})"></div>
   <hr>
   </div>`;
-  divPosts.appendChild(thePostDiv); 
+    divPosts.appendChild(thePostDiv);
 
-});
+  });
 
 
 
-//BOTÓN PARA POSTEAR
-document.getElementById('buttonPost').addEventListener('click', () => {
-  const database = firebase.database();
-  const user = firebase.auth().currentUser;
-  console.log(user);
-  
-  let uid = user.uid;
-  let username = user.displayName;
-  let picture = user.photoURL;
-  let place = '';
-  let date = new Date();
-  let body = document.getElementById('message').value;
-  document.getElementById("message").value="";
-  const writeNewPost = (uid, username, picture, place, body) => {
-   // A post entry.
-   let postData = {
-     author: username,
-     uid: uid,
-     body: body,
-     place: place,
-     starCount: 0,
-     authorPic: picture,
-     createDate: date.toUTCString(),
-   };
- 
-   // Get a key for a new Post.
-  let newPostKey = firebase.database().ref().child('posts').push().key;
-  document.getElementById("message").value="";
-   // Write the new post's data simultaneously in the posts list and the user's post list.
-  let updates = {};
-   updates['/posts/' + newPostKey] = postData;
-   updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-   updates['/places/' + place + '/' + newPostKey] = postData;
-   return firebase.database().ref().update(updates);
- }
-  // LLAMADA A FUNCIÓN QUE IMPRIME POSTS
+  //BOTÓN PARA POSTEAR
+  document.getElementById('buttonPost').addEventListener('click', () => {
+    const database = firebase.database();
+    const user = firebase.auth().currentUser;
+    console.log(user);
+
+    let uid = user.uid;
+    let username = user.displayName;
+    let picture = user.photoURL;
+    let place = '';
+    let date = new Date();
+    let body = document.getElementById('message').value;
+    document.getElementById("message").value = "";
+    const writeNewPost = (uid, username, picture, place, body) => {
+      // A post entry.
+      let postData = {
+        author: username,
+        uid: uid,
+        body: body,
+        place: place,
+        starCount: 0,
+        authorPic: picture,
+        createDate: date.toUTCString(),
+      };
+
+      // Get a key for a new Post.
+      let newPostKey = firebase.database().ref().child('posts').push().key;
+      document.getElementById("message").value = "";
+      // Write the new post's data simultaneously in the posts list and the user's post list.
+      let updates = {};
+      updates['/posts/' + newPostKey] = postData;
+      updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+      updates['/places/' + place + '/' + newPostKey] = postData;
+      return firebase.database().ref().update(updates);
+    }
+    // LLAMADA A FUNCIÓN QUE IMPRIME POSTS
     writeNewPost(uid, username, picture, place, body);
     //  printPost();
   });
@@ -96,24 +99,24 @@ document.getElementById('buttonPost').addEventListener('click', () => {
 
 
 
-//*********************************************************************************** */
+  //*********************************************************************************** */
 
 
-// FUNCIÓN PARA ELIMINAR POSTS
- 
-window.deletePost = (id) => {
-  const questions = confirm('¿Deseas eliminar post?');
-  if (questions) {
-    const userId = firebase.auth().currentUser.uid;
-    firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
-    firebase.database().ref().child('posts/' + id).remove();
-  while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
-    alert('Se eliminó el post');
-     location.reload();
+  // FUNCIÓN PARA ELIMINAR POSTS
+
+  window.deletePost = (id) => {
+    const questions = confirm('¿Deseas eliminar post?');
+    if (questions) {
+      const userId = firebase.auth().currentUser.uid;
+      firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
+      firebase.database().ref().child('posts/' + id).remove();
+      while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
+      alert('Se eliminó el post');
+      location.reload();
     }
   };
 
- 
+
 
 
   // ***********************************************************************//
@@ -141,6 +144,3 @@ window.deletePost = (id) => {
   });
 
 };
-
-
-
