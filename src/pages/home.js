@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 import { perfilInfo } from './perfil.js';
 
 export const goHome = () => {
   window.location.hash = '/home';
+
   document.getElementById('root').innerHTML = `
   <header class="header">
           <img class="logoBar" src="img/logoOcre.png" alt="logo-bitacora"/>
@@ -13,39 +12,43 @@ export const goHome = () => {
           </nav>
           <a id="btnLogOut" href="#" class="logOut">Cerrar sesión</a>
   </header>
-        <div id="perfil-content"></div>
-  <div id="writePost" class="post" >  
-  <h4 class="publicaciones">PUBLICACIONES</h4>
-  <div class="postUsers" id="postsUsers"> 
-  <div class="listPosts" id="lista"></div>  </div>
-  <textarea name="message" id="message" class="texts"></textarea> 
-  <div id="postButton">
-  <input type="button" value="Postear" id="buttonPost" class="firstButton">
-  </div>          
-  </div>`;
+  <section class= "bodyHome">
+    <div id="perfil-content"></div>
+    <div id="writePost" class="post" >  
+      <h4 class="publicaciones">PUBLICACIONES</h4>
+      <div class="postUsers" id="postsUsers"> 
+        <div class="listPosts" id="lista">
+          <textarea name="message" id="message" class="texts"></textarea> 
+          <div id="postButton">
+            <input type="button" value="Postear" id="buttonPost" class="firstButton">
+          </div>           
+        </div>
+      </div>
+    </div>
+  </section>`;
 
-
-  // RECUPERACIÓN DE POSTS
-  const divPosts = document.getElementById('lista');
+  //CREACIÓN DE POSTS
+  const divPosts = document.getElementById('postsUsers');
   const createPosts = firebase.database().ref().child('posts/');
 
   createPosts.on('child_added', snap => {
     const thePostDiv = document.createElement('div');
-    thePostDiv.className = 'postBox';
-    thePostDiv.innerHTML = 
-    `<div id="post${snap.key}">
-      <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
-      <hr>
-        <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
-        <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
-      <hr>
-      <input type="button" id="likes" value="Like">
-      <hr>
-    </div>`;
+
+    thePostDiv.innerHTML = `<div class="postBox" id="post${snap.key}">
+  <div class="encabezado"><img src="${snap.val().authorPic || ''}"><div id="usuario">${snap.val().author}</div></div>
+  <hr>
+  <div id="datePost" class="textPosts">${snap.val().createDate}</div>
+  <div id="bodyPost" class="textPosts"><p>${snap.val().body}</p></div>
+  <hr>
+  <input type="button" id="likes" value="Like"> 
+  <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})">
+  <hr>
+  </div>`;
     divPosts.appendChild(thePostDiv);
   });
 
-  // BOTÓN PARA POSTEAR
+
+  //BOTÓN PARA POSTEAR
   document.getElementById('buttonPost').addEventListener('click', () => {
     const database = firebase.database();
     const user = firebase.auth().currentUser;
@@ -73,14 +76,14 @@ export const goHome = () => {
 
       // Get a key for a new Post.
       let newPostKey = firebase.database().ref().child('posts').push().key;
-
+      document.getElementById('message').value = '';
       // Write the new post's data simultaneously in the posts list and the user's post list.
       let updates = {};
       updates['/posts/' + newPostKey] = postData;
       updates['/user-posts/' + uid + '/' + newPostKey] = postData;
       updates['/places/' + place + '/' + newPostKey] = postData;
       return firebase.database().ref().update(updates);
-    };
+    }
     // LLAMADA A FUNCIÓN QUE IMPRIME POSTS
     writeNewPost(uid, username, picture, place, body);
     //  printPost();
@@ -88,63 +91,52 @@ export const goHome = () => {
 
   // *********************************************************************************** //
 
-  // Función para eliminar Post
-  const deletePost = (id) => {
-    const questions = confirm('¿Está seguro de eliminar?');
+  // FUNCIÓN PARA ELIMINAR POSTS
+
+  window.deletePost = (id) => {
+    const questions = confirm('¿Deseas eliminar post?');
     if (questions) {
       const userId = firebase.auth().currentUser.uid;
       firebase.database().ref().child('/user-posts/' + userId + '/' + id).remove();
       firebase.database().ref().child('posts/' + id).remove();
-      while (publications.firstChild) publications.removeChild(publications.firstChild);
-      alert('Post eliminado');
-      window.location.reload();
+      while (thePostDiv.firstChild) thePostDiv.removeChild(thePostDiv.firstChild);
+      alert('Se eliminó el post');
+      location.reload();
     }
   };
 
-  // Función para editar Post
-  window.editPost = (id) => {
-    const currentPost = document.getElementById(id);
-    const currentTextarea = currentPost.querySelector('.textarea-post');
-    currentTextarea.disabled = false;
-    const editButton = currentPost.querySelector('.edit-button');
-    const saveButton = currentPost.querySelector('.save-button');
-    editButton.classList.add('hidden');
-    saveButton.classList.remove('hidden');
-    currentTextarea.focus();
-  };
+  // // Función para guardar post editado
+  // window.savePostEdit = (id) => {
+  //   const currentPost = document.getElementById(id);
+  //   const currentTextarea = currentPost.querySelector('.textarea-post');
+  //   const editButton = currentPost.querySelector('.edit-button');
+  //   const saveButton = currentPost.querySelector('.save-button');
+  //   const userId = firebase.auth().currentUser.uid;
 
-  // Función para guardar post editado
-  window.savePostEdit = (id) => {
-    const currentPost = document.getElementById(id);
-    const currentTextarea = currentPost.querySelector('.textarea-post');
-    const editButton = currentPost.querySelector('.edit-button');
-    const saveButton = currentPost.querySelector('.save-button');
-    const userId = firebase.auth().currentUser.uid;
+  //   firebase.database().ref('posts/')
+  //     .once('value', (postsRef) => { 
+  //       const posts = postsRef.val();
+  //       const postEdit = posts[id];
 
-    firebase.database().ref('posts/')
-      .once('value', (postsRef) => { 
-        const posts = postsRef.val();
-        const postEdit = posts[id];
+  //       let postEditRef = {
+  //         id: postEdit.id,
+  //         author: postEdit.author,
+  //         newPost: currentTextarea.value,
+  //         privacy: postEdit.privacy,
+  //         likeCount: postEdit.likeCount,
+  //         usersLikes: postEdit.usersLikes || [],
+  //       };
 
-        let postEditRef = {
-          id: postEdit.id,
-          author: postEdit.author,
-          newPost: currentTextarea.value,
-          privacy: postEdit.privacy,
-          likeCount: postEdit.likeCount,
-          usersLikes: postEdit.usersLikes || [],
-        };
+  //       let updates = {};
+  //       updates['/posts/' + id] = postEditRef;
+  //       updates['/user-posts/' + userId + '/' + id] = postEditRef;
+  //       return firebase.database().ref().update(updates);
 
-        let updates = {};
-        updates['/posts/' + id] = postEditRef;
-        updates['/user-posts/' + userId + '/' + id] = postEditRef;
-        return firebase.database().ref().update(updates);
-
-        currentTextarea.disabled = true;
-        saveButton.classList.add('hidden');
-        editButton.classList.remove('hidden');
-      });
-  };
+  //       currentTextarea.disabled = true;
+  //       saveButton.classList.add('hidden');
+  //       editButton.classList.remove('hidden');
+  //     });
+  // };
 
   // ***********************************************************************//
 
@@ -170,5 +162,3 @@ export const goHome = () => {
       });
   });
 };
-
-// *********************************************************************************** //

@@ -2,12 +2,17 @@
     margin: 0;
 }
 
-body{
+.login-register{
     background-image: url("img/trekking22.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed;  
     font-family:'BenchNine', sans-serif !important;
+}
+.bodyHome {
+    background-color: #bdc3c7 !important;
+    display: flex;
+    justify-content: center;
 }
 
 /* Style Login Page */
@@ -192,6 +197,11 @@ li span p:hover {
     display: flex;
     justify-content: center;
 }
+
+.reset:hover {
+    background-color: #cccccc;
+}
+
 .comeback {  
     color: #ecf0f1;
     text-align: center;
@@ -252,7 +262,7 @@ li span p:hover {
   
   /* Change color on hover */
   .topnav a:hover, a:hover {
-    background-color: #cccccc;
+    background-color: #f2af58;
     color: #34495e;
     font-weight: bold;
     border-radius: 20px;
@@ -362,16 +372,13 @@ li span p:hover {
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
   .side {
-    float: left;
-    width: 25%;
-    background-color: #f1f1f1;
+    width: 100%;
     padding: 10px;  
   }
   
   /* Main column */
   .main {
-    float: left;
-    width: 75%;
+    display: flex;
     background-color: #f1f1f1;
     padding-top: 20px;
   }
@@ -389,7 +396,8 @@ li span p:hover {
   }
 
   .btnSave:hover {
-    background-color: #54606b;
+    background-color: #425b75;
+    color: #ecf0f1;
   }
 
 
@@ -446,9 +454,9 @@ li span p:hover {
 .postBox {
     margin-top: 20px;
     margin-left: 10%;
-    background-color: #f2f2f2;
+    background-color: #ecf0f1;
     color: #34495e;
-    width: 75%;
+    width: 80%;
     border-radius: 10px;
 }
 
@@ -469,7 +477,7 @@ li span p:hover {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     font-weight: bolder;
-    color: #b2bec3;
+    color: #34495e;
     text-align: center;
     margin-top: 20px;
 }
@@ -490,11 +498,12 @@ li span p:hover {
     border-style: none;
     width: 100px;
     cursor: pointer;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
    
 .firstButton:hover {
-    background-color: #54606b;
+    background-color: #425b75;
+    color: #ecf0f1;
 }
 
 #buttonPost {
@@ -505,26 +514,22 @@ li span p:hover {
 }
 
 .encabezado {
-    width: 100%;
-    height:1%;
+    height:2%;
     margin: 1em;
     margin-right: 10px;
+    font-family: 'Quicksand', sans-serif;
     font-size: 100%;
     display: inline-flex;
     text-align: center;
-    color: #3a3333;
     align-content: space-between;
     align-items: baseline;
     padding-top:5px;
-  
     padding-left: 19px;
     padding-right: 19px;
 }
 
 .encabezado img {
-    width: 3%;
-    height:1%;
-    padding: 0;
+    width: 8%;
     align-self: center;  
     border: 1px solid #FFFFFF;
 }
@@ -535,22 +540,27 @@ hr {
 }
 
 #usuario {
-    margin-left: 20px;
+    margin-left: 15px;
     text-align: left;
+    font-size: 20px;
+    color: #34495e;
 }
 
 .textPosts {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 #likes {
     background-color: #cccccc;
+    font-family: 'Quicksand', sans-serif;
     padding: 10px;
     margin-left: 25px;
     margin-top: 8px;
     margin-bottom: 8px;
+    margin-right: 5px;
     border-style: none;
     border-radius: 10px;
     color: #34495e;
@@ -558,7 +568,7 @@ hr {
 }
 
 #likes:hover {
-    background-color: #ff7979;
+    background-color: #f2af58;
     color: #34495e;
 
 }
@@ -571,4 +581,3 @@ hr {
     color:white;
     background-color:#5D576B;
 }
-    
