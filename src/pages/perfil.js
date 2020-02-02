@@ -15,9 +15,7 @@ export const perfilInfo = () => {
              <button id="btnSave-perfil" type="submit" class="btnSave">Editar perfil</button>
          </div>
        </div>
-       <div class="main"> 
-       <h2>PUBLICACIONES</h2>
-       </div>
+      
      </div>`;
 
   /* Button editar perfil */
