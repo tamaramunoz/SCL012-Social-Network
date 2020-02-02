@@ -40,8 +40,6 @@ const perfilEdit = () => {
                      <input class="datosPerfil" type="text" id="perfilNombre" name="username" Placeholder="Nombre completo" required     value=${user.displayName} />
                      <label for="Email"></label> 
                      <input class="datosPerfil" type="email" id="perfilEmail " name="email" Placeholder="Email" required   value=${user.email} />
-                     <label for="Pasword"></label> 
-                     <input class="datosPerfil" type="password" id="perfilPassword" name="password-example" Placeholder="Contraseña" />
                      <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
                         </div>
                 </form>
@@ -59,6 +57,8 @@ const updateProfile = () => {
     const name = document.getElementById("perfilNombre").value;
     const user = firebase.auth().currentUser;
     const photo = document.getElementById("photoChanges").value;
+    const file = ($('#my_file'))[0].files[o];
+    console.log(file);
     if (user != null) {
       user.updateProfile({
         displayName: name,
