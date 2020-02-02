@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import {
-  perfilInfo,
-} from './perfil.js';
+import { perfilInfo } from './perfil.js';
 
 export const goHome = () => {
   window.location.hash = '/home';
@@ -19,7 +17,7 @@ export const goHome = () => {
   <div id="writePost" class="post" >  
   <h4 class="publicaciones">PUBLICACIONES</h4>
   <div class="postUsers" id="postsUsers"> 
-  <div class="listPosts" id="lista"></div> </div>
+  <div class="listPosts" id="lista"></div>  </div>
   <textarea name="message" id="message" class="texts"></textarea> 
   <div id="postButton">
   <input type="button" value="Postear" id="buttonPost" class="firstButton">
@@ -41,7 +39,7 @@ export const goHome = () => {
         <div id="datePost" class = "textPosts">${snap.val().createDate}</div>
         <div id="bodyPost" class = "textPosts"><p>${snap.val().body}</p></div>
       <hr>
-      <div id="likes">Likes</div>
+      <input type="button" id="likes" value="Like">
       <hr>
     </div>`;
     divPosts.appendChild(thePostDiv);
@@ -59,7 +57,7 @@ export const goHome = () => {
     let place = '';
     let date = new Date();
     let body = document.getElementById('message').value;
-    document.getElementById("message").value="";
+    document.getElementById('message').value = '';
     const writeNewPost = (uid, username, picture, place, body) => {
       // A post entry.
       let postData = {
@@ -68,6 +66,7 @@ export const goHome = () => {
         body: body,
         place: place,
         starCount: 0,
+        like: [],
         authorPic: picture,
         createDate: date.toUTCString(),
       };
@@ -133,7 +132,7 @@ export const goHome = () => {
           newPost: currentTextarea.value,
           privacy: postEdit.privacy,
           likeCount: postEdit.likeCount,
-          usersLikes: postEdit.usersLikes || []
+          usersLikes: postEdit.usersLikes || [],
         };
 
         let updates = {};
@@ -171,3 +170,5 @@ export const goHome = () => {
       });
   });
 };
+
+// *********************************************************************************** //
