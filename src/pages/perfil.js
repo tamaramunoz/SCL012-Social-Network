@@ -46,11 +46,10 @@ const perfilEdit = () => {
          </div>`;
 
   /* Button actualizar perfil */
-  document.getElementById("save-perfil").addEventListener("click", () => {
+  document.getElementById('save-perfil').addEventListener('click', () => {
     updateProfile();
-
-  })
-}
+  });
+};
 
 /* editar Datos perfil */
 const updateProfile = () => {
@@ -66,3 +65,4 @@ const updateProfile = () => {
       }).cath((error));
       }
     };
+
