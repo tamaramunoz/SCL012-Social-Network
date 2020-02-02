@@ -18,19 +18,14 @@ Y cuando te decides por algún lugar...
 [Bitácora](https://.github.io/SCL012-Social-Network/src/index.html), es la red social que estabas esperando y que te ayudará a resolver todas las problemáticas antes mencionadas, permitiendo hacer de tus próximas salidas, en tu tiempo libre, una experiencia inolvidable.  
 
 
-
-
-
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Es importante
-que detalles:
-
 * Quiénes son los principales usuarios de producto.
 * Qué problema resuelve el producto / para qué le servirá a estos usuarios.
 
 * ### **1.2 Problematica del Usuario**
+Bitácora nace luego de detectar la necesidad, en un grupo de potenciales usuarios, de disponer de una aplicación en donde pudiesen encontrar información actualizada aportada por otros usuarios sobre... 
 
-Investigaciones que hicimos de otras aplicaciones
+Se revisaron las aplicaciones:
+
 
 * ### **1.3 Objetivos de la Aplición**
 
