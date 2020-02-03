@@ -20,21 +20,7 @@ export const perfilInfo = () => {
 
   /* Button editar perfil */
   document.getElementById('btnSave-perfil').addEventListener('click', () => {
-    modal.style.display = "block";
-
     perfilEdit();
-   
-       const modal = document.getElementById('modalUser');
-       const span = document.getElementsByClassName("close")[0];
-
-      span.addEventListener('click', () => {
-        modal.style.display = "none";
-      });
-      window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      });
   });
 };
 
@@ -42,7 +28,7 @@ const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
   document.getElementById('perfil-content').innerHTML =
-  `  <div id="modalUser" class="modal">
+    `<div id="modalUser" class="modal">
              <div class="perfil-section modal-content"
               <span class="close">&times;</span>
                     <div class="container-profile">
@@ -58,8 +44,9 @@ const perfilEdit = () => {
                      <button class="datosPerfil modal" id="save-perfil" type="submit">Actualizar</button>
                 </form>
              </div>
-    </div>
-</div>`;
+      </div>`;
+
+
 
   /* Button actualizar perfil */
   document.getElementById('save-perfil').addEventListener('click', () => {
@@ -67,18 +54,18 @@ const perfilEdit = () => {
   });
 };
 
+
 /* editar Datos perfil */
 const updateProfile = () => {
-    const name = document.getElementById("perfilNombre").value;
-    const user = firebase.auth().currentUser;
-    const photo = document.getElementById("photoChanges").value;
-    const file = ($('#my_file'))[0].files[o];
-    console.log(file);
-    if (user != null) {
-      user.updateProfile({
-        displayName: name,
-        photoURL: photo,
-      }).cath((error));
-      }
-    };
-
+  const name = document.getElementById("perfilNombre").value;
+  const user = firebase.auth().currentUser;
+  const photo = document.getElementById("photoChanges").value;
+  const file = ($('#my_file'))[0].files[o];
+  console.log(file);
+  if (user != null) {
+    user.updateProfile({
+      displayName: name,
+      photoURL: photo,
+    }).cath((error));
+  }
+};
