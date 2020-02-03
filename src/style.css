@@ -3,7 +3,7 @@
 }
 
 .login-register{
-    background-image: url("img/trekking22.jpg");
+    background-image: url("img/bitacora.png");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed;  
@@ -395,7 +395,7 @@ li span p:hover {
     cursor: pointer;
   }
 
-  .btnSave:hover {
+  .btnSave:hover, .firstButton:hover, .deleteEdit:hover {
     background-color: #425b75;
     color: #ecf0f1;
   }
@@ -485,8 +485,8 @@ li span p:hover {
 /* Style Posts */
 .postsUsers {
     display: flex;
-    overflow:scroll;
-    padding:10px;
+    overflow: scroll;
+    padding: 10px;
 }
 
 .postBox {
@@ -508,8 +508,15 @@ li span p:hover {
     color:#34495e;  
     margin-top: 10px;
     resize:none;
-    margin-left: 20%;
+    margin-left: 25%;
 }
+
+#buttonPost {
+    height: 40px;
+    padding-top:10px;
+    margin-right:5px;
+    margin-left: 25%;
+ }
 
 .publicaciones {
     font-family: 'Quicksand', sans-serif;
@@ -537,18 +544,6 @@ li span p:hover {
     width: 100px;
     cursor: pointer;
     margin-bottom: 10px;
-}
-   
-.firstButton:hover {
-    background-color: #425b75;
-    color: #ecf0f1;
-}
-
-#buttonPost {
-   height: 40px;
-   padding-top:10px;
-   margin-right:5px;
-   margin-left: 20%;
 }
 
 .encabezado {
@@ -609,6 +604,19 @@ hr {
     background-color: #f2af58;
     color: #34495e;
 
+}
+
+.deleteEdit {
+    background-color: #34495e;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    border-style: none;
+    border-radius: 10px;
+    color: #cccccc;
+    cursor: pointer;
 }
 
 #footer {
