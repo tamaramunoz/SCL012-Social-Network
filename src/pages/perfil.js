@@ -15,26 +15,25 @@ export const perfilInfo = () => {
              <button id="btnSave-perfil" type="submit" class="btnSave">Editar perfil</button>
          </div>
        </div>
-      
      </div>`;
 
   /* Button editar perfil */
   document.getElementById('btnSave-perfil').addEventListener('click', () => {
-    modal.style.display = "block";
+    modal.style.display = 'block';
 
     perfilEdit();
-   
-       const modal = document.getElementById('modalUser');
-       const span = document.getElementsByClassName("close")[0];
 
-      span.addEventListener('click', () => {
-        modal.style.display = "none";
-      });
-      window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      });
+    const modal = document.getElementById('modalUser');
+    const span = document.getElementsByClassName('close')[0];
+
+    span.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   });
 };
 
@@ -69,16 +68,15 @@ const perfilEdit = () => {
 
 /* editar Datos perfil */
 const updateProfile = () => {
-    const name = document.getElementById("perfilNombre").value;
-    const user = firebase.auth().currentUser;
-    const photo = document.getElementById("photoChanges").value;
-    const file = ($('#my_file'))[0].files[o];
-    console.log(file);
-    if (user != null) {
-      user.updateProfile({
-        displayName: name,
-        photoURL: photo,
-      }).cath((error));
-      }
-    };
-
+  const name = document.getElementById('perfilNombre').value;
+  const user = firebase.auth().currentUser;
+  const photo = document.getElementById('photoChanges').value;
+  const file = ($('#my_file'))[0].files[o];
+  console.log(file);
+  if (user != null) {
+    user.updateProfile({
+      displayName: name,
+      photoURL: photo,
+    }).cath((error));
+  }
+};
