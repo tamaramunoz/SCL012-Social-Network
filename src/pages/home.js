@@ -41,7 +41,7 @@ export const goHome = () => {
   <div id="bodyPost" class="textPosts"><p>${snap.val().body}</p></div>
   <hr>
   <input type="button" id="likes" value="Like"> 
-  <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="firstButton" onclick="window.deletePost(${snap.key})">
+  <input type="button" value="Eliminar" id="buttonRemove${snap.key}" class="deleteEdit" onclick="window.deletePost(${snap.key})">
   <hr>
   </div>`;
     divPosts.appendChild(thePostDiv);
@@ -92,7 +92,6 @@ export const goHome = () => {
   // *********************************************************************************** //
 
   // FUNCIÓN PARA ELIMINAR POSTS
-
   window.deletePost = (id) => {
     const questions = confirm('¿Deseas eliminar post?');
     if (questions) {
