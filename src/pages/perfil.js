@@ -20,7 +20,21 @@ export const perfilInfo = () => {
 
   /* Button editar perfil */
   document.getElementById('btnSave-perfil').addEventListener('click', () => {
+    modal.style.display = "block";
+
     perfilEdit();
+   
+       const modal = document.getElementById('modalUser');
+       const span = document.getElementsByClassName("close")[0];
+
+      span.addEventListener('click', () => {
+        modal.style.display = "none";
+      });
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
   });
 };
 
@@ -28,8 +42,9 @@ const perfilEdit = () => {
   window.location.hash = '/editProfile';
   const user = firebase.auth().currentUser;
   document.getElementById('perfil-content').innerHTML =
-    `<div id="modalUser" class="w3-modal">
-             <div class="perfil-section"
+  `  <div id="modalUser" class="modal">
+             <div class="perfil-section modal-content"
+              <span class="close">&times;</span>
                     <div class="container-profile">
                         <div class="ft-perfil">
                          <img id= "photoChanges" src= "${user.photoURL}" class="ft" alt="foto de perfil"/>
@@ -40,10 +55,11 @@ const perfilEdit = () => {
                      <input class="datosPerfil" type="text" id="perfilNombre" name="username" Placeholder="Nombre completo" required     value=${user.displayName} />
                      <label for="Email"></label> 
                      <input class="datosPerfil" type="email" id="perfilEmail " name="email" Placeholder="Email" required   value=${user.email} />
-                     <button class="datosPerfil" id="save-perfil" type="submit">Actualizar</button>
-                        </div>
+                     <button class="datosPerfil modal" id="save-perfil" type="submit">Actualizar</button>
                 </form>
-         </div>`;
+             </div>
+    </div>
+</div>`;
 
   /* Button actualizar perfil */
   document.getElementById('save-perfil').addEventListener('click', () => {
