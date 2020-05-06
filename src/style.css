@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+}
+
+.login-register{
+    background-image: url("img/bitacora.png");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;  
+    font-family:'BenchNine', sans-serif !important;
+}
+
+.bodyHome {
+    background-color: #bdc3c7 !important;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style Login Page */
+.logo {
+    margin: 0 auto;
+    width: 15%;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    list-style: none;
+}
+
+#root {
+    height: 100%; 
+    display: flex;
+    flex-flow: column;
+}
+
+.icon {
+    max-width: 25px;
+    vertical-align: middle;
+    padding: 5px;
+    display: inline-block;
+}
+
+.form-login {
+    margin: 0 auto;
+    width: 350px;
+    display: flex;
+    justify-content: flex-end;
+    color: #f2f2f2;
+}
+
+.text-box {
+    width: 100%;
+    overflow: hidden;
+    font-size: 18px;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.inputLogin {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 12px;
+    color: #ecf0f1;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    width: 90%;
+}
+
+.inputLogin:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder { 
+    color: #ecf0f19c; 
+} 
+
+.login {
+    color: #34495e;
+    padding: 10px;
+    background-color: #ecf0f1;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    border-style: none;
+    width: 300px;
+    cursor: pointer;
+    margin: 10px auto;
+    margin-top: 20px;
+}
+
+.login:hover {
+    background-color: #cccccc;
+}
+
+.register {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.register:hover {
+    background-color: #cccccc;
+    color: #34495e;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.loginGoogle p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    color: #ecf0f1;
+    margin: auto;
+    cursor: pointer;
+}
+
+li span p:hover {
+    padding: 10px;
+    background-color: #cccccc;
+    color: #34495e;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* Style Register Page */
+.registerBox {
+    margin: 10px auto;
+    width: 500px;
+    justify-content: center;
+}
+
+.fontRoot {  
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 10px; 
+    font-family: 'Quicksand', sans-serif;
+    padding: 20px;
+} 
+
+.inputRegister {
+    border: none;
+    outline: none;
+    background: none;
+    color: #ecf0f1;
+    font-family: 'Quicksand', sans-serif;
+    align-content: center;
+    width: 90%;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 12px;
+    margin: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.btnLogin {
+    color: #34495e;
+    padding: 10px;
+    background-color: #ecf0f1;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    border-radius: 10px;
+    border-style: none;
+    width: 300px;
+    cursor: pointer;
+    margin: 10px auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.btnLogin:hover {
+    background-color: #cccccc;
+}
+
+.reset {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.reset:hover {
+    background-color: #cccccc;
+}
+
+.comeback {  
+    color: #ecf0f1;
+    text-align: center;
+    margin: 10px; 
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration-line: underline;
+    cursor: pointer;
+} 
+
+.comeback:hover {
+    background-color: #cccccc;
+    color: #34495e;
+    font-weight: bold;
+    border-radius: 20px;
+    text-decoration-line: none ;
+}
+
+/* Style Home Page */
+
+
+/* Style the top navigation bar */
+.logoBar{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 7%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #ecf0f1;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logOut {
+    display: block;
+    color: #ecf0f1;
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+  /* Change color on hover */
+  .topnav a:hover, a:hover {
+    background-color: #f2af58;
+    color: #34495e;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+
+    .logo {
+        margin: 0 auto;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoBar {
+        display: inline-block;
+        width: 8%;
+        margin: 0;
+    }
+
+    .fontRoot {  
+        color: #ecf0f1;
+        text-align: center;
+        margin-bottom: 10px; 
+        font-family: 'Quicksand', sans-serif;
+        font-size: 12px;
+        padding: 20px;
+    } 
+
+    .registerBox {
+        margin: 10px auto;
+        width: 90%;
+        justify-content: center;
+    }
+
+    .topnav a, .logOut {
+        font-size: 15px;
+        font-weight: lighter;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        background-color: #333;
+    }
+}
+  
+/* Responsive layout - when the screen is less than 360px wide */
+@media screen and (max-width: 400px) {
+    .logo {
+        margin: 0 auto;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoBar {
+        display: inline-block;
+        width: 15%;
+        margin: 0;
+    }
+
+    .fontRoot {  
+        color: #ecf0f1;
+        text-align: center;
+        margin-bottom: 10px; 
+        font-family: 'Quicksand', sans-serif;
+        font-size: 12px;
+        padding: 20px;
+    } 
+
+    .registerBox {
+        margin: 10px auto;
+        width: 90%;
+        justify-content: center;
+    }
+
+    .topnav a, .logOut {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+}
+
+/* Style Profile */
+
+/* Column container */
+.row {  
+    display: flex;
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+  .side {
+    width: 100%;
+    padding: 10px;  
+  }
+  
+  /* Main column */
+  .main {
+    display: flex;
+    background-color: #f1f1f1;
+    padding-top: 20px;
+  }
+
+  .btnSave {
+    color: #ecf0f1;
+    padding: 10px;
+    background-color: #34495e;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-style: none;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .btnSave:hover, .firstButton:hover, .deleteEdit:hover {
+    background-color: #425b75;
+    color: #ecf0f1;
+  }
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .side, .main {   
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  /* Fake image, just for this example */
+  .fakeimg {
+    background-color: #aaa;
+    width: 50%;
+    height:120;
+  }
+
+#btnSave-perfil{
+      display: block;
+  }
+
+.picture{
+    width: 100%;
+} 
+
+.name{
+    display: flex;
+    margin-top: 20px;
+}
+
+.email{
+    display: flex;
+}
+
+.info{
+    width: auto;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {   
+      flex-direction: column;
+    }
+  }
+
+/* Style Posts */
+.postsUsers {
+    display: flex;
+    overflow: scroll;
+    padding: 10px;
+}
+
+.postBox {
+    margin-top: 20px;
+    margin-left: 10%;
+    background-color: #ecf0f1;
+    color: #34495e;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.texts {
+    height: 5rem;
+    width: 50%;
+    background-color:#f7f1e3;
+    border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px; 
+    color:#34495e;  
+    margin-top: 10px;
+    resize:none;
+    margin-left: 25%;
+}
+
+#buttonPost {
+    height: 40px;
+    padding-top:10px;
+    margin-right:5px;
+    margin-left: 25%;
+ }
+
+.publicaciones {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #34495e;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.listPosts {
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.firstButton {
+    color: #ecf0f1;
+    padding: 10px;
+    background-color: #34495e;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    border-style: none;
+    width: 100px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.encabezado {
+    height:2%;
+    margin: 1em;
+    margin-right: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 100%;
+    display: inline-flex;
+    text-align: center;
+    align-content: space-between;
+    align-items: baseline;
+    padding-top:5px;
+    padding-left: 19px;
+    padding-right: 19px;
+}
+
+.encabezado img {
+    width: 8%;
+    align-self: center;  
+    border: 1px solid #FFFFFF;
+}
+
+hr {
+    height: 1px;
+    background-color: #d6d6d6;
+}
+
+#usuario {
+    margin-left: 15px;
+    text-align: left;
+    font-size: 20px;
+    color: #34495e;
+}
+
+.textPosts {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#like {
+    background-color: #cccccc;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    margin-left: 25px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    border-style: none;
+    border-radius: 10px;
+    color: #34495e;
+    cursor: pointer;
+}
+
+#like:hover {
+    background-color: #f2af58;
+    color: #34495e;
+
+}
+
+.deleteEdit {
+    background-color: #34495e;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    border-style: none;
+    border-radius: 10px;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+#footer {
+    clear:both;
+    text-align: center;
+    font-size:12px ;
+    width: 100%;
+    color:white;
+    background-color:#5D576B;
+}

@@ -1,32 +1,61 @@
-// aqui exportaras las funciones que necesites
-export const myFunction = () => {
-  console.log('hola ratsi')
-}
 
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-  apiKey: "AIzaSyDgD6mNHghURun7IwcQZqbREOFcYXY4z-Q",
-  authDomain: "bitacora-d5fc4.firebaseapp.com",
-  projectId: "bitacora-d5fc4",
-});
-// inicializando cloud firestore
-let db = firebase.firestore();
+// LOGIN CON EMAIL Y PWD
+export const emailLogin = (email, password) => {
+  event.preventDefault();
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Contraseña Incorrecta');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+    });
+};
 
+/* Validación de correo al usuario */
+const veriFyUser = () => {
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(() => {
+    alert('Email sent!');
+  }).catch('Email not sent!');
+};
 
-// agregando posts
-db.collection("posts").add({
-  name: "Tami",
-  place: "Cajon del Maipo",
-  description: "Lugar para acampar"
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+// CREAR CUENTA MAIL Y PWD
+export const createAccount = (name, email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((result) => {
+    return result.user.updateProfile({
+      displayName:name,
+    });
+  })
+  .then(()=>{
+    veriFyUser();
+    alert('User account created');
+  })
+  .catch((error) => {
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    if (errorCode === 'auth/email en uso') {
+      alert('Correo en uso');
+    }
+    if (errorCode === 'auth/email inválido') {
+      alert('Email inválido');
+    }
+    if (errorCode === 'auth/password débil') {
+      alert('Contraseña tiene que tener más de 8 caracteres y una mayúscula');
+    }
+    alert(`${errorCode}`);
+  });
+};
 
-
-
-
-
+/* Cambio de contraseña */
+export const resetPassword = () => {
+  firebase.auth().sendPasswordResetEmail(user.email)
+    .then(() => {
+      alert('Email sent!');
+    })
+    .catch('Email not sent!');
+};

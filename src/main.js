@@ -1,4 +1,15 @@
-// Este es el punto de entrada de tu aplicacion
+import { goLoginPage } from './pages/login.js';
+import { goHome } from './pages/home.js';
+import './firebase-init.js';
 
-import { myFunction } from './lib/index.js';
-myFunction();
+// #Observador de autenticación
+export const stateObserved = () => {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user && user.emailVerified) {
+      goHome();
+    } else {
+      goLoginPage();
+    }
+  });
+};
+stateObserved();

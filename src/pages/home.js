@@ -27,7 +27,8 @@ export const goHome = () => {
     </div>
   </section>`;
 
-// creacion de post
+  //CREACIÓN DE POSTS
+
   const divPosts = document.getElementById('postsUsers');
   const createPosts = firebase.database().ref().child('posts/');
 
@@ -53,6 +54,7 @@ export const goHome = () => {
     const database = firebase.database();
     const user = firebase.auth().currentUser;
     // console.log(user);
+
 
     let uid = user.uid;
     let username = user.displayName;
