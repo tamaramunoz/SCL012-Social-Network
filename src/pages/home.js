@@ -28,6 +28,7 @@ export const goHome = () => {
   </section>`;
 
   //CREACIÓN DE POSTS
+
   const divPosts = document.getElementById('postsUsers');
   const createPosts = firebase.database().ref().child('posts/');
 
@@ -52,7 +53,8 @@ export const goHome = () => {
   document.getElementById('buttonPost').addEventListener('click', () => {
     const database = firebase.database();
     const user = firebase.auth().currentUser;
-    console.log(user);
+    // console.log(user);
+
 
     let uid = user.uid;
     let username = user.displayName;
